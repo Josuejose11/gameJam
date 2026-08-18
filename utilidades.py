@@ -96,5 +96,6 @@ def informacoes():
 def main():
     informacoes()
 
+
 if __name__ == "__main__":
     main()
