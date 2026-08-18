@@ -41,15 +41,53 @@ def entrar(id_usuario, senha):
 
 # cria o login 
 def criar_login(nome, email, senha):
-    # a lógica para criar o login com os dados fornecidos
-    pass
+    conn = criar_conexao() 
+    cursor = conn.cursor()
+
+    sql = "INSERT INTO usuarios (nome, email, senha) VALUES (%s, %s, %s)"
+    valores = (nome, email, senha)
+    cursor.execute(sql, valores)
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 # lê os usuários e RETORNA os valores
 def ler_usuarios():
-    id_usuario = validacoes.validar_id()
-    senha = validacoes.validar_senha()
-    return id_usuario, senha  #  Retornando os dados para serem usados fora
+    conn = criar_conexao()
+    cursor = conn.cursor()
 
+    if conn is None:
+        print("Erro ao conectar com o banco!")
+        return
+
+
+    sql = "SELECT * FROM usuarios"
+    cursor.execute(sql)
+
+    resultado = cursor.fetchall()
+
+    if not resultado:
+        print("======================")
+        print("Nenhum aluno cadastrado")
+        print("======================")
+        cursor.close()
+        conn.close()
+        return False
+    else:
+        print("======================")
+        print("LISTA DE ALUNOS")
+        print("======================")
+
+        for aluno in resultado:
+            print(
+                f"Id: {aluno[0]} | "
+                f"Nome: {aluno[1]} | "
+            )
+
+    cursor.close()
+    conn.close()
+    return True
+    
 # def de informacoes
 def informacoes():
     # Busca os usuários chamando a função correspondente
@@ -99,3 +137,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+    ...
+
+# def de solucao de problemas
+def solucao_problemas():
+    print("==================")
+    print("==================")
+
+
+
+
+
+
