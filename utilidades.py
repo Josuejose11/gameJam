@@ -240,4 +240,3 @@ def bioeconomia():
             ...
 
 
-criar_conexao()
