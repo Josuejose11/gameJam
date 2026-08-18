@@ -44,6 +44,11 @@ def criar_login(nome, email, senha):
     conn = criar_conexao() 
     cursor = conn.cursor()
 
+    if conn is None:
+        print("Erro ao conectar com o banco!")
+        return
+
+
     sql = "INSERT INTO usuarios (nome, email, senha) VALUES (%s, %s, %s)"
     valores = (nome, email, senha)
     cursor.execute(sql, valores)
@@ -61,7 +66,7 @@ def ler_usuarios():
         return
 
 
-    sql = "SELECT * FROM usuarios"
+    sql = "SELECT * FROM Usuarios"
     cursor.execute(sql)
 
     resultado = cursor.fetchall()
