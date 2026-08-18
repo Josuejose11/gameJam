@@ -3,7 +3,7 @@ from concurrent.futures import thread
 from google import genai
 from google.genai import types
 import time
-import threading
+import threading        
 
 pensando = False
 
@@ -15,7 +15,13 @@ def nenhuma_das_opcoes():
 
 #def de "Pensando..." 
 def carregando():
+    pensando = True
+    
+    thread = threading.Thread(target=carregando)
+    thread.start()
+
     while pensando:
+
         print("\rPensando   ", end="", flush=True)
         time.sleep(0.5)
 
