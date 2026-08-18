@@ -1,7 +1,15 @@
+from concurrent.futures import thread
+
 from google import genai
 from google.genai import types
 import time
 import threading
+
+
+# def Nenhuma das opções anteriores  
+def nenhuma_das_opcoes():
+    prompt = input("Fale para a nossa IA o seu problema para que nós possamos te ajudar: ")
+    gemini(prompt)
 
 #def de "Pensando..." 
 def carregando():
@@ -20,7 +28,13 @@ def carregando():
 
 # Def da conexao e conversa c o gemini
 def gemini(texto):
-    client = genai.Client(api_key="Sua chave de API aqui")
+    pensando = True
+
+    thread = threading.Thread(target=carregando)
+    thread.start()
+
+    resposta  = "Me dê apenas uma resposta simples para: " + texto
+    client = genai.Client(api_key="Sua chave de API do Gemini aqui")  # Substitua pelo seu token de API do Gemini
 
     config = types.GenerateContentConfig(
         automatic_function_calling=types.AutomaticFunctionCallingConfig(
@@ -34,18 +48,10 @@ def gemini(texto):
         config=config
     )
 
-    return response.text
+    resposta = response.text
+    pensando = False
+    thread.join()
+    
 
 
-pensando = True
-
-msg = input("Digite uma mensagem para o Gemini: ")
-
-thread = threading.Thread(target=carregando)
-thread.start()
-
-resposta  = gemini("Me dê apenas uma resposta simples para: " + msg)
-
-pensando = False
-thread.join()
-print ("\n\nChat: " + resposta)
+    print ("\n\nChat: " + resposta)
