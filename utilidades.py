@@ -159,7 +159,7 @@ def solucao_problemas():
         match escolha:
             case "0":
                 print ("Você saiu")               
-                exit()
+                exit()       
             case "1":
                 ambiental()
             case "2":
