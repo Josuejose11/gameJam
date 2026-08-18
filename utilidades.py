@@ -93,9 +93,8 @@ def informacoes():
 # def de solucao de problemas
 def solucao_problemas():
     print("==================")
-    print("==================")
-
-
+    print("Para entendermos sobe o que se trata o problema precisamos saber em qual categoria ele se classifica")
+    print("| 1 -  Ambiental \n | 2 -  Econômico")
 
 
 
