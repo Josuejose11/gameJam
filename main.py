@@ -8,7 +8,6 @@ print("Seja bem vindo ao nosso sistema!")
 print ("Somos um sistema que te ajuda a organizar sua empresa tendo em mente a sustentabilidade")
 
 while True:
-    
     escolha = input("Antes de tudo queremos saber se você já tem login?\n | 0 - Sair \n | 1 - Entrar \n | 2 - Criar login\n | Escreva aqui: ").strip()
 
     if escolha.strip() == "":

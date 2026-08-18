@@ -167,7 +167,7 @@ def solucao_problemas():
 # def para a funcao ambiental dentro da solucao de problemas
 def ambiental():
     print("Em quais dessas classificações o seu problema se encaixa?")
-    print(" | 1 - Poluição \n | 2 - Desmatamento \n | 3 - Mudanças climáticas \n | 4 - Perda de biodiversidade \n | 5 - Esgotamento de recursos naturais")
+    print(" | 1 - Poluição \n | 2 - Desmatamento \n | 3 - Mudanças climáticas \n | 4 - Perda de biodiversidade \n | 5 - Esgotamento de recursos naturais\n | 6 - Nenhuma das opções enteriores")
     escolha = input("Escreva aqui: ")
 
     match escolha:
@@ -181,28 +181,51 @@ def ambiental():
             ...
         case "5":
             ...
+        case "6":
+            ...
         case _:
             print("Opção inválida, Tente novamente.")
 
 # def para a funcao economico dentro da solucao de problemas
 def economico():
     print("Em quais dessas classificações o seu problema se encaixa?")
-    print(" | 1 - Crise econômica \n | 2 - Desemprego \n | 3 - Inflação \n | 4 - Dívida pública \n | 5 - Instabilidade econômica")
+    print(" | 1 - Crise econômica \n | 2 - Desemprego \n | 3 - Inflação \n | 4 - Dívida pública \n | 5 - Instabilidade econômica\n | 6 - Nenhuma das opções enteriores")
     escolha = input("Escreva aqui: ")
+    match escolha:
+        case "1":
+            ...
+        case "2":
+            ...
+        case "3":
+            ...
+        case "4":
+            ...
+        case "5":
+            ...
+        case "6":
+            ...
+        case _:
+            print("Opção inválida, Tente novamente.")
 
-
-
-
-
-
-
-
-    
 # def para a funcao ambiental e economico dentro da solucao de problemas
 def bioeconomia():
     print("Em quais dessas classificações o seu problema se encaixa?")
-    
-
+    print (" | 1 - Desperdício de matéria-prima orgânica\n |  2 - Uso excessivo de recursos naturais\n | 3 - Alto custo de matérias-primas sustentáveis\n | 4 - Falta de tecnologia para reaproveitamento \n | 5 - Nenhuma das opções enteriores")
+    escolha  = input ("Escreva aqui: ")
+    match escolha:
+        case "1":
+            ...
+        case "2":
+            ...
+        case "3":
+            ... 
+        case "4":
+            ... 
+        case "5":
+            ... 
+        case "6":
+            ...
+        
 
 
 
