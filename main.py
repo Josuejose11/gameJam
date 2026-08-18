@@ -1,3 +1,5 @@
+
+import validacoes
 from utilidades import *
 from validacoes import *
 from menu import *
