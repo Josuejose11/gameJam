@@ -13,7 +13,13 @@ def nenhuma_das_opcoes():
 
 #def de "Pensando..." 
 def carregando():
+    pensando = True
+    
+    thread = threading.Thread(target=carregando)
+    thread.start()
+
     while pensando:
+
         print("\rPensando   ", end="", flush=True)
         time.sleep(0.5)
 
@@ -28,10 +34,7 @@ def carregando():
 
 # Def da conexao e conversa c o gemini
 def gemini(texto):
-    pensando = True
-
-    thread = threading.Thread(target=carregando)
-    thread.start()
+    
 
     resposta  = "Me dê apenas uma resposta simples para: " + texto
     client = genai.Client(api_key="Sua chave de API do Gemini aqui")  # Substitua pelo seu token de API do Gemini

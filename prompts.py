@@ -1,3 +1,6 @@
+from ia import *
+
+
 # ===========
 # Nenhuma das opções anteriores  
 # ===========
