@@ -31,9 +31,8 @@ Bio4_2 = "Analise a empresa na classificação Ambiental, identificando o proble
 
 
 Bio5_1 = "Analise a empresa na classificação Ambiental, identificando o problema de esgotamento dos recursos naturais, especialmente da água. Sugira uma solução sustentável para reduzir o consumo e preservar os recursos hídricos."
-
-Bio5_2 = ...
-Bio5_3 = ...
+Bio5_2 = "Analise a empresa na classificação Ambiental, identificando o problema de esgotamento dos recursos naturais, especialmente dos sais minerais. Sugira uma solução sustentável para reduzir o consumo e preservar os recursos terrestres."
+Bio5_3 = "Analise a empresa na classificação Ambiental, identificando o problema de esgotamento dos recursos naturais, especialmente das florestas. Sugira uma solução sustentável para reduzir o consumo e preservar os recursos fósseis."
 
 # ===========
 # ECONOMICA 
