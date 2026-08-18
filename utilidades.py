@@ -214,9 +214,17 @@ def bioeconomia():
     escolha  = input ("Escreva aqui: ")
     match escolha:
         case "1":
+            print ("Para o problema do desperdicio de matéria-prima orgânica temos algumas classificações, selecione a que mais se encaixa com o seu problema")
+            print (" | 1 - Excesso de resíduos orgânicos \n | 2 - Falta de reaproveitamento\n | 3 - Perda de matéria-prima durante a produção\n | 4 - Nenhuma das opções anteriores")
+            escolha  = input (" | Escreva aqui: ")
             ...
+
         case "2":
+            print ("Para o problema do uso excessivo de recursos naturais temos algumas classificações, selecione a que mais se encaixa com o seu problema")
+            print (" | 1 - Consumo excessivo de água \n | 2 - Consumo excessivo de madeira \n | 3 - Uso excessivo de recursos agrícolas\n | 4 - Uso excessivo de recursos agrícolas\n | 5 - Nenhuma das opções anteriores")
+            escolha  = input (" | Escreva aqui: ")
             ...
+                
         case "3":
             ... 
         case "4":
