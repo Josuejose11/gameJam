@@ -177,17 +177,33 @@ def ambiental():
 
     match escolha:
         case "1":
-            print("Poluição é a introdução de substâncias ou energia no meio ambiente que causam efeitos adversos. Isso pode incluir poluição do ar, da água e do solo, afetando a saúde humana e os ecossistemas.")
+            print ("Sobre poluição podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print(" | 1 - Poluição do ar \n | 2 - Poluição da água \n | 3 - Poluição do solo \n | 4 - Poluição sonora \n | 5 - Poluição luminosa \n | 6 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "2":
-            print("Desmatamento é a remoção de árvores e vegetação de uma área, geralmente para fins agrícolas ou urbanos, resultando em perda de habitat e biodiversidade.")
+            print("Sobre desmatamento podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print(" | 1 - Desmatamento em larga escala \n | 2 - Desmatamento para agricultura \n | 3 - Desmatamento para urbanização \n | 4 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "3":
-            print("Mudanças climáticas são alterações nos padrões climáticos globais, causadas principalmente pela atividade humana, afetando ecossistemas e sociedades.")
+            print("Sobre mudanças climáticas podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print(" | 1 - Aquecimento global \n | 2 - Alterações nos padrões de chuva \n | 3 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "4":
-            print("Perda de biodiversidade é a diminuição da variedade de espécies vivas em um ecossistema, frequentemente causada por atividades humanas.")
+            print("Sobre perda de biodiversidade podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print(" | 1 - Perda de habitat \n | 2 - Extinção de espécies \n | 3 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "5":
-            print("Esgotamento de recursos naturais é a degradação ou exaustão de recursos renováveis ou não renováveis, como água, minerais e florestas.")
+            print("Sobre esgotamento de recursos naturais podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print(" | 1 - Esgotamento de água \n | 2 - Esgotamento de minerais \n | 3 - Esgotamento de florestas \n | 4 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "6":
             print("Nenhuma das opções anteriores.")
+
         case _:
             print("Opção inválida, Tente novamente.")
 
@@ -197,18 +213,35 @@ def economico():
     print(" | 1 - Crise econômica \n | 2 - Desemprego \n | 3 - Inflação \n | 4 - Dívida pública \n | 5 - Instabilidade econômica\n | 6 - Nenhuma das opções enteriores")
     escolha = input("Escreva aqui: ")
     match escolha:
+
         case "1":
-            ...
+            print("Sobre crise economica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print("| 1 - Aumento dos custos de produção \n | 2 - Queda na produção \n | 3 - Perda de matéria-prima durante a produção\n | 4 - Individamento Empresarial \n | 5 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "2":
-            ...
+            print ("Sobre desemprego podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print("| 1 - Aumento do custo de mão de obra \n | 2 - Redução da demanda por trabalhadores \n | 3 - Substituição de trabalhadores por tecnologia \n | 4 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "3":
-            ...
+            print("Sobre inflação podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print("| 1 - Aumento dos preços de bens e serviços \n | 2 - Aumento dos custos de produção \n | 3 - Perda de poder de compra da moeda \n | 4 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "4":
-            ...
+            print("Sobre dívida pública podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+            print("| 1 - Aumento do endividamento governamental \n | 2 - Redução da receita fiscal \n | 3 - Aumento dos juros da dívida \n | 4 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "5":
-            ...
+            print("Sobre instabilidade econômica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema .")
+            print("| 1 - Flutuações significativas na economia \n | 2 - Impactos negativos no crescimento econômico \n | 3 - Efeitos sobre o emprego \n | 4 - Nenhuma das opções anteriores")
+            escolha = input("Escreva aqui: ")
+
         case "6":
-            ...
+            print("Nenhuma das opções anteriores.")
+            
         case _:
             print("Opção inválida, Tente novamente.")
 
@@ -218,24 +251,30 @@ def bioeconomia():
     print (" | 1 - Desperdício de matéria-prima orgânica\n |  2 - Uso excessivo de recursos naturais\n | 3 - Alto custo de matérias-primas sustentáveis\n | 4 - Falta de tecnologia para reaproveitamento \n | 5 - Nenhuma das opções enteriores")
     escolha  = input ("Escreva aqui: ")
     match escolha:
+
         case "1":
             print ("Para o problema do desperdicio de matéria-prima orgânica temos algumas classificações, selecione a que mais se encaixa com o seu problema")
             print (" | 1 - Excesso de resíduos orgânicos \n | 2 - Falta de reaproveitamento\n | 3 - Perda de matéria-prima durante a produção\n | 4 - Nenhuma das opções anteriores")
             escolha  = input (" | Escreva aqui: ")
-            ...
 
         case "2":
             print ("Para o problema do uso excessivo de recursos naturais temos algumas classificações, selecione a que mais se encaixa com o seu problema")
             print (" | 1 - Consumo excessivo de água \n | 2 - Consumo excessivo de madeira \n | 3 - Uso excessivo de recursos agrícolas\n | 4 - Uso excessivo de recursos agrícolas\n | 5 - Nenhuma das opções anteriores")
             escolha  = input (" | Escreva aqui: ")
-            ...
                 
         case "3":
-            ... 
+            print ("Para o problema do alto custo de matérias-primas sustentáveis temos algumas classificações, selecione a que mais se encaixa com o seu problema")
+            print (" | 1 - Matérias-primas sustentáveis são mais caras que as convencionais \n | 2 - Dificuldade em encontrar fornecedores de matérias-primas sustentáveis \n | 3 - Falta de incentivos governamentais para o uso de matérias-primas sustentáveis \n | 4 - Nenhuma das opções anteriores")
+            escolha  = input (" | Escreva aqui: ") 
+
         case "4":
-            ... 
+            print ("Para o problema da falta de tecnologia para reaproveitamento temos algumas classificações, selecione a que mais se encaixa com o seu problema")
+            print (" | 1 - Falta de equipamentos adequados para reaproveitamento \n | 2 - Falta de conhecimento técnico para reaproveitamento \n | 3 - Falta de pesquisa e desenvolvimento em tecnologias de reaproveitamento \n | 4 - Nenhuma das opções anteriores")
+            escolha  = input (" | Escreva aqui: ")
+
         case "5":
-            ... 
+            print ("Nenhuma das opções anteriores.")
+
         case "6":
-            ...
+            print("Opção inválida, Tente novamente.")
         
