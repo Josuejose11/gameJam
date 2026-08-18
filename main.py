@@ -7,10 +7,10 @@ from datetime import *
 import pwinput
 
 print("Seja bem vindo ao nosso sistema!")
-print ("Somos um sistema que te ajuda a organizar sua empresa tendo em mente a sustentabilidade")
+print ("Nossa missão é ajudar empresas a encontrar soluções sustentáveis para os desafios do presente e construir um futuro melhor :)")
 
 while True:
-    escolha = input("Antes de tudo queremos saber se você já tem login?\n | 0 - Sair \n | 1 - Entrar \n | 2 - Criar login\n | Escreva aqui: ").strip()
+    escolha = input("Escolha uma das opões:\n | 0 - Sair \n | 1 - Entrar \n | 2 - Criar login\n | Escreva aqui: ").strip()
 
     if escolha.strip() == "":
         print("Campo vazio!")
@@ -28,12 +28,12 @@ while True:
 
             print("===============")
             id_usuario = validar_id()
-            escolha = input("Você deseja que mostre a senha enquanto digita?\n | 1 - Sim\n | 2 - Não\n | Digite aqui: ").replace(" ", "")
+            escolha = input("Você deseja visualizar a sua senha enquanto digita?\n | 1 - Sim\n | 2 - Não\n | Digite aqui: ").replace(" ", "")
 
             if escolha == "1":
-                senha = input("Digite a sua senha: ")
+                senha = input("Digite sua senha: ")
             elif escolha == "2":
-                senha = pwinput.pwinput("Digite a sua senha: ", mask="*").strip()
+                senha = pwinput.pwinput("Digite sua senha: ", mask="*").strip()
             else:
                 erro()
                 continue
@@ -80,7 +80,7 @@ while True:
 
         case _:
             erro()
-            print("Escolha uma das opções dadas")
+            print("Escolha uma das opções! :(")
             continue
 
         
