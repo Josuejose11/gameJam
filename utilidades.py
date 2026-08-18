@@ -1,7 +1,8 @@
-from mysql.connector import connect
+import mysql.connector  # Corrigido o import para aceitar mysql.connector.connect
 from mysql.connector import Error
+import validacoes  # Alterado para importar o módulo e permitir chamadas 'validacoes.funcao'
 
-#Cria conexao com o sql
+# Cria conexao com o sql
 def criar_conexao():
     try:
         conexao = mysql.connector.connect(
@@ -18,6 +19,9 @@ def criar_conexao():
 # entra no login do docente 
 def entrar(id_usuario, senha):
     conn = criar_conexao()
+    if not conn:
+        return False
+        
     cursor = conn.cursor()
     sql = "SELECT * FROM usuarios WHERE id_usuario = %s AND senha = %s"
     valores = (id_usuario, senha)
@@ -28,9 +32,9 @@ def entrar(id_usuario, senha):
     conn.close()
  
     if not resultado:
-        print (f"------------")
-        print("Senha não encontrada")
-        print (f"------------")
+        print("------------")
+        print("Senha ou usuário não encontrado")
+        print("------------")
         return False
 
     return True
@@ -38,13 +42,59 @@ def entrar(id_usuario, senha):
 # cria o login 
 def criar_login(nome, email, senha):
     # a lógica para criar o login com os dados fornecidos
+    pass
 
-    ler_usuarios()
-
-#le os usuarios 
+# lê os usuários e RETORNA os valores
 def ler_usuarios():
-    
+    id_usuario = validacoes.validar_id()
+    senha = validacoes.validar_senha()
+    return id_usuario, senha  #  Retornando os dados para serem usados fora
 
 # def de informacoes
 def informacoes():
+    # Busca os usuários chamando a função correspondente
+    id_usuario, senha = ler_usuarios()
     
+    # Valida o login usando a função local 'entrar'
+    if id_usuario and entrar(id_usuario, senha):
+        print("\nLogin bem-sucedido!")
+    else:
+        print("Falha no login. Tente novamente.")
+        return  # Encerra a função caso o login falhe
+
+    print("\nBem-vindo ao programa de sustentabilidade!")
+    
+    sust = "Sustentabilidade é a capacidade de usar os recursos da Terra com inteligência. O objetivo é atender às necessidades do presente sem acabar com o futuro. O conceito busca um equilíbrio entre cuidar do planeta, fazer a economia crescer e ajudar a sociedade."
+    como = "Como podemos contribuir para a sustentabilidade? Podemos economizar energia, reciclar, reduzir o consumo de água, plantar árvores e apoiar empresas que se preocupam com o meio ambiente. Cada pequena ação conta!"
+    beneficios = "Os benefícios da sustentabilidade são muitos. Ela ajuda a proteger o meio ambiente, melhora a qualidade de vida das pessoas, promove a economia verde e garante que as futuras gerações possam viver em um planeta saudável."
+    economia = "Além de todos os benefícios ambientais, a sustentabilidade também pode trazer vantagens econômicas. Empresas que adotam práticas sustentáveis podem reduzir custos, atrair clientes conscientes e se destacar no mercado."
+
+    while True:
+        print("\nEscolha uma opção:")
+        print("1. Sustentabilidade")
+        print("2. Como contribuir")
+        print("3. Benefícios")
+        print("4. Economia")
+        print("5. Sair")
+        
+        escolha = input("Digite o número da opção desejada: ")
+
+        if escolha == "1":
+            print(f"\n{sust}")
+        elif escolha == "2":
+            print(f"\n{como}")
+        elif escolha == "3":
+            print(f"\n{beneficios}")
+        elif escolha == "4":
+            print(f"\n{economia}")
+        elif escolha == "5":
+            print("Saindo do programa...")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+def main():
+    informacoes()
+
+if __name__ == "__main__":
+    main()
