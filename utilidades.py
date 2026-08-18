@@ -37,8 +37,16 @@ def entrar(id_usuario, senha):
 
 # cria o login 
 def criar_login(nome, email, senha):
-    # a lógica para criar o login com os dados fornecidos
+    conn = criar_conexao() 
+    cursor = conn.cursor()
 
+    sql = "INSERT INTO usuarios (nome, email, senha) VALUES (%s, %s, %s)"
+    valores = (nome, email, senha)
+    cursor.execute(sql, valores)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    
     ler_usuarios()
 
 #le os usuarios 

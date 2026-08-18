@@ -18,9 +18,9 @@ def carregando():
         print("\rPensando...", end="", flush=True)
         time.sleep(0.5)
 
-# Def da conexao e cvc c o gemini
+# Def da conexao e conversa c o gemini
 def gemini(texto):
-    client = genai.Client(api_key="sua_chave_aqui")
+    client = genai.Client(api_key="Sua chave de API aqui")
 
     config = types.GenerateContentConfig(
         automatic_function_calling=types.AutomaticFunctionCallingConfig(
@@ -37,7 +37,6 @@ def gemini(texto):
     return response.text
 
 
-
 pensando = True
 
 msg = input("Digite uma mensagem para o Gemini: ")
@@ -45,8 +44,8 @@ msg = input("Digite uma mensagem para o Gemini: ")
 thread = threading.Thread(target=carregando)
 thread.start()
 
-resposta = gemini("Me dê apenas uma resposta simples para: " + msg)
+resposta  = gemini("Me dê apenas uma resposta simples para: " + msg)
 
 pensando = False
 thread.join()
-
+print ("\n\nChat: " + resposta)
