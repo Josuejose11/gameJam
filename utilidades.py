@@ -265,31 +265,27 @@ def bioeconomia():
                         gemini (BioE_1_1)
                     case "2":
                         gemini (BioE_1_2)
-                        ... # def de IA 
                     case "3":
                         gemini (BioE_1_3)
-                        ... # def de IA 
                     case "4":
-                        gemini (BioE_1_4)
-                        ...# def de IA 
+                        nenhuma_das_opcoes()
                     case _:
                         print("Opção inválida, Tente novamente.")
                         continue
                     
-
             case "2":
                 print ("Para o problema do uso excessivo de recursos naturais temos algumas classificações, selecione a que mais se encaixa com o seu problema")
-                print (" | 1 - Consumo excessivo de água \n | 2 - Consumo excessivo de madeira \n | 3 - Uso excessivo de recursos agrícolas\n | 4 - Uso excessivo de recursos agrícolas\n | 5 - Nenhuma das opções anteriores")
+                print (" | 1 - Consumo excessivo de água \n | 2 - Consumo excessivo de madeira \n | 3 - Uso excessivo de recursos agrícolas\n | 4 - Nenhuma das opções anteriores")
                 escolha  = input (" | Escreva aqui: ")
                 match escolha:
                     case "1":
-                        ... # def de IA 
+                        gemini(BioE2_1)
                     case "2":
-                        ... # def de IA 
+                        gemini(BioE2_2)
                     case "3":
-                        ... # def de IA 
+                        gemini(BioE2_3)
                     case "4":
-                        ... # def de IA 
+                        nenhuma_das_opcoes()
                     case _:
                         print("Opção inválida, Tente novamente.")
                         continue
@@ -300,33 +296,35 @@ def bioeconomia():
                 escolha  = input (" | Escreva aqui: ")
                 match escolha:
                     case "1":
-                        ... # def de IA 
+                        gemini(BioE3_1)
                     case "2":
-                        ... # def de IA 
+                        gemini(BioE3_2)
                     case "3":
-                        ... # def de IA 
+                        gemini(BioE3_3)
                     case "4":
-                        ...# def de IA 
+                        nenhuma_das_opcoes()
                     case _:
                         print("Opção inválida, Tente novamente.")
                         continue
+
             case "4":
                 print ("Para o problema da falta de tecnologia para reaproveitamento temos algumas classificações, selecione a que mais se encaixa com o seu problema")
                 print (" | 1 - Falta de equipamentos adequados \n | 2 - Alto custo da tecnologia\n | 3 - Processos antigos ou ineficientes\n | 4 - Nenhuma das opções anteriores")
                 escolha  = input (" | Escreva aqui: ")
                 match escolha:
                     case "1":
-                        ... # def de IA 
+                        gemini(BioE4_1)
                     case "2":
-                        ... # def de IA 
+                        gemini(BioE4_2)
                     case "3":
-                        ... # def de IA 
+                        gemini(BioE4_3)
                     case "4":
-                        ...# def de IA 
+                        nenhuma_das_opcoes()
                     case _:
                         print("Opção inválida, Tente novamente.")
                         continue
+
             case "5":
-                ... 
+                nenhuma_das_opcoes() 
     
             
