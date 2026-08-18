@@ -43,8 +43,41 @@ def criar_login(nome, email, senha):
 
 #le os usuarios 
 def ler_usuarios():
-    
+    conn = criar_conexao()
+    cursor = conn.cursor()
 
+    if conn is None:
+        print("Erro ao conectar com o banco!")
+        return
+
+
+    sql = "SELECT * FROM usuarios"
+    cursor.execute(sql)
+
+    resultado = cursor.fetchall()
+
+    if not resultado:
+        print("======================")
+        print("Nenhum aluno cadastrado")
+        print("======================")
+        cursor.close()
+        conn.close()
+        return False
+    else:
+        print("======================")
+        print("LISTA DE ALUNOS")
+        print("======================")
+
+        for aluno in resultado:
+            print(
+                f"Id: {aluno[0]} | "
+                f"Nome: {aluno[1]} | "
+            )
+
+    cursor.close()
+    conn.close()
+    return True
+    
 # def de informacoes
 def informacoes():
     
