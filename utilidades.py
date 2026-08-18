@@ -119,18 +119,18 @@ def ler_usuarios():
     
 # def de informacoes
 def informacoes():
-    sust = "Sustentabilidade é a capacidade de usar os recursos da Terra com inteligência. O objetivo é atender às necessidades do presente sem acabar com o futuro. O conceito busca um equilíbrio entre cuidar do planeta, fazer a economia crescer e ajudar a sociedade."
+    sust = "Sustentabilidade é a capacidade de usar os recursos da Terra com inteligência.\n O objetivo é atender às necessidades do presente sem acabar com o futuro. O conceito busca um equilíbrio entre cuidar do planeta, fazer a economia crescer e ajudar a sociedade."
     como = "Como podemos contribuir para a sustentabilidade? Podemos economizar energia, reciclar, reduzir o consumo de água, plantar árvores e apoiar empresas que se preocupam com o meio ambiente. Cada pequena ação conta!"
     beneficios = "Os benefícios da sustentabilidade são muitos. Ela ajuda a proteger o meio ambiente, melhora a qualidade de vida das pessoas, promove a economia verde e garante que as futuras gerações possam viver em um planeta saudável."
     economia = "Além de todos os benefícios ambientais, a sustentabilidade também pode trazer vantagens econômicas. Empresas que adotam práticas sustentáveis podem reduzir custos, atrair clientes conscientes e se destacar no mercado."
 
     while True:
         print("\nEscolha uma opção:")
-        print("1. Sustentabilidade")
-        print("2. Como contribuir")
-        print("3. Benefícios")
-        print("4. Economia")
-        print("5. Sair")
+        print("1 - Sustentabilidade")
+        print("2 - Como contribuir")
+        print("3 - Benefícios")
+        print("4 - Economia")
+        print("0 - Sair")
         
         escolha = input("Digite o número da opção desejada: ")
 
@@ -142,8 +142,8 @@ def informacoes():
             print(f"\n{beneficios}")
         elif escolha == "4":
             print(f"\n{economia}")
-        elif escolha == "5":
-            print("Saindo do programa...")
+        elif escolha == "0":
+            print("Saindo...")
             break
         else:
             print("Opção inválida. Tente novamente.")
