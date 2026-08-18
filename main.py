@@ -1,3 +1,5 @@
+
+import validacoes
 from utilidades import *
 from validacoes import *
 from menu import *
@@ -24,7 +26,7 @@ while True:
             if not ler_usuarios():
                 continue
 
-            print("\33[31m===============\033[m")
+            print("===============")
             id_usuario = validar_id()
             escolha = input("Você deseja que mostre a senha enquanto digita?\n | 1 - Sim\n | 2 - Não\n | Digite aqui: ").replace(" ", "")
 
@@ -80,4 +82,5 @@ while True:
             erro()
             print("Escolha uma das opções dadas")
             continue
-     
+
+        
