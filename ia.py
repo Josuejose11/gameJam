@@ -5,6 +5,8 @@ from google.genai import types
 import time
 import threading
 
+pensando = False
+
 
 # def Nenhuma das opções anteriores  
 def nenhuma_das_opcoes():
@@ -28,13 +30,8 @@ def carregando():
 
 # Def da conexao e conversa c o gemini
 def gemini(texto):
-    pensando = True
-
-    thread = threading.Thread(target=carregando)
-    thread.start()
-
     resposta  = "Me dê apenas uma resposta simples para: " + texto
-    client = genai.Client(api_key="Sua chave de API do Gemini aqui")  # Substitua pelo seu token de API do Gemini
+    client = genai.Client(api_key="SUA_CHAVE_API")  # Substitua pelo seu token de API do Gemini
 
     config = types.GenerateContentConfig(
         automatic_function_calling=types.AutomaticFunctionCallingConfig(
@@ -48,10 +45,21 @@ def gemini(texto):
         config=config
     )
 
-    resposta = response.text
+    return response.text
+  
+#  def de inicio da conversa c a ia
+def Ia(msg):
+    global pensando
+
+    pensando = True
+    thread = threading.Thread(target=carregando)
+    thread.start()
+
+    resposta = gemini(msg)
+
     pensando = False
     thread.join()
-    
-
-
     print ("\n\nChat: " + resposta)
+
+
+

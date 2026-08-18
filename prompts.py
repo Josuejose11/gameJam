@@ -1,6 +1,10 @@
+from ia import gemini
+
 # ===========
 # Nenhuma das opções anteriores  
 # ===========
+
+
 def nenhuma_das_opcoes():
     prompt = input("Fale para a nossa IA o seu problema para que nós possamos te ajudar: ")
     gemini(prompt)
@@ -9,13 +13,35 @@ def nenhuma_das_opcoes():
 # ===========
 # AMBIENTAL 
 # ===========
+Bio1_1 = "Analise a empresa na classificação Ambiental, identificando problemas de poluição do ar. Sugira uma solução sustentável para reduzir as emissões de poluentes."
+Bio1_2 = "Analise a empresa na classificação Ambiental, identificando problemas de poluição do água. Sugira uma solução sustentável para reduzir as emissões de poluentes."
+Bio1_3 = "Analise a empresa na classificação Ambiental, identificando problemas de poluição do solo. Sugira uma solução sustentável para reduzir as emissões de poluentes."
+Bio1_4 = "Analise a empresa na classificação Ambiental, identificando problemas de poluição sonora. Sugira uma solução sustentável para reduzir as emissões de poluentes."
+Bio1_5 = "Analise a empresa na classificação Ambiental, identificando problemas de poluição luminosa. Sugira uma solução sustentável para reduzir as emissões de poluentes."
 
+Bio2_1 = "Analise a empresa na classificação Ambiental, identificando o problema de desmatamento em larga escala. Sugira uma solução sustentável para reduzir o desmatamento."
+Bio2_2 = "Analise a empresa na classificação Ambiental, identificando o problema de desmatamento para agricultura. Sugira uma solução sustentável para reduzir o desmatamento."
+Bio2_3 = "Analise a empresa na classificação Ambiental, identificando o problema de desmatamento para urbanização. Sugira uma solução sustentável para reduzir o desmatamento."
+
+Bio3_1 = "Analise a empresa na classificação Ambiental, identificando problemas relacionados às mudanças climáticas e ao aquecimento global. Sugira uma solução sustentável para reduzir esses impactos."
+Bio3_2 = "Analise a empresa na classificação Ambiental, identificando problemas relacionados às alterações nos padrões de chuvas. Sugira uma solução sustentável para reduzir seus efeitos."
+
+Bio4_1 = "Analise a empresa na classificação Ambiental, identificando o problema de perda de biodiversidade causada pela perda de habitat. Sugira uma solução sustentável para reduzir esse impacto."
+Bio4_2 = "Analise a empresa na classificação Ambiental, identificando o problema de extinção de espécies. Sugira uma solução sustentável para reduzir esse impacto."
+
+
+Bio5_1 = "Analise a empresa na classificação Ambiental, identificando o problema de esgotamento dos recursos naturais, especialmente da água. Sugira uma solução sustentável para reduzir o consumo e preservar os recursos hídricos."
+
+Bio5_2 = ...
+Bio5_3 = ...
 
 # ===========
 # ECONOMICA 
 # ===========
-
-
+E1_1 = "Analise a empresa na classificação Econômica, identificando o Aumento dos custos de produção. Sugira uma solução sustentável para reduzi-lo. "
+E1_2 = "Analise a empresa na classificação Econômica, identificando o Aumento dos custos de mão de obra. Sugira uma solução sustentável para reduzi-lo. "
+E1_3 = "Analise a empresa na classificação Econômica, identificando a Queda na produção. Sugira uma solução sustentável para reduzi-lo. "
+E1_4 = "Analise a empresa na classificação Econômica, identificando o Individamento Empresarial. Sugira uma solução sustentável para reduzi-lo. "
 
 # ===========
 # BIOECONOMICA 
@@ -23,6 +49,7 @@ def nenhuma_das_opcoes():
 BioE1_1 = "Analise a empresa na classificação Bioeconomia, identificando desperdício e uso excessivo de matéria-prima orgânica. Sugira uma solução sustentável para reduzi-lo. "
 BioE1_2 = "Analise a empresa na classificação Bioeconomia, identificando a falta de reaproveitamento de matéria-prima orgânica. Sugira uma solução sustentável para reaproveitar esses recursos."
 BioE1_3 = "Analise a empresa na classificação Bioeconomia, identificando a perda de matéria-prima orgânica durante a produção. Sugira uma solução sustentável para reaproveitar esses recursos."
+BioE1_4 = "Analise a empresa na classificação Bioeconomia, identificando a perda de matéria-prima orgânica durante a produção. Sugira uma solução sustentável para reaproveitar esses recursos."
 
 
 BioE2_1 = "Analise a empresa na classificação Bioeconomia, identificando o uso excessivo de recursos naturais, com foco no consumo excessivo de água. Sugira uma solução sustentável para reduzir o consumo."

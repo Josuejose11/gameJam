@@ -186,17 +186,17 @@ def ambiental():
 
             match escolha:
                 case "1":
-                    gemini (BioE2_1)
+                    Ia (Bio1_1)
                 case "2":
-                    gemini (BioE2_2)
+                    Ia (Bio1_2)
                 case "3":
-                    gemini (BioE2_3)
+                    Ia (Bio1_3)
                 case "4":
-                    gemini (BioE2_4)
+                    Ia (Bio1_4)
                 case "5":
-                    gemini (BioE2_5)
+                    Ia (Bio1_5)
                 case "6":
-                    print("Nenhuma das opções anteriores.")
+                    nenhuma_das_opcoes()
 
         case "2":
             print("Sobre desmatamento podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -205,13 +205,13 @@ def ambiental():
 
             match escolha:
                 case "1":
-                    gemini (BioE2_1)
+                    Ia (Bio2_1)
                 case "2":
-                    gemini (BioE2_2)
+                    Ia (Bio2_2)
                 case "3":
-                    gemini (BioE2_3)
+                    Ia (Bio2_3)
                 case "4":
-                    print("Nenhuma das opções anteriores.")
+                    nenhuma_das_opcoes()
 
         case "3":
             print("Sobre mudanças climáticas podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -220,11 +220,11 @@ def ambiental():
 
             match escolha:
                 case"1":
-                    gemini (BioE2_1)
+                    Ia (Bio3_1)
                 case "2":
-                    gemini (BioE2_2)
+                    Ia (Bio3_2)
                 case"3":
-                    print("Nenhuma das opções anteriores.")
+                    nenhuma_das_opcoes()
 
         case "4":
             print("Sobre perda de biodiversidade podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -233,11 +233,11 @@ def ambiental():
 
             match escolha:
                 case "1":
-                    gemini (BioE2_1)
+                    Ia (Bio4_1)
                 case "2":
-                    gemini (BioE2_2)
+                    Ia (Bio4_2)
                 case "3":
-                    print("Nenhuma das opções anteriores.")
+                    nenhuma_das_opcoes()
 
         case "5":
             print("Sobre esgotamento de recursos naturais podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -246,16 +246,16 @@ def ambiental():
 
             match escolha:
                 case "1":
-                    gemini (BioE1_1)        
+                    Ia (Bio5_1)        
                 case "2":
-                    gemini (BioE1_2)
+                    Ia (Bio5_2)
                 case "3":
-                    gemini (BioE1_3)
+                    Ia (Bio5_3)
                 case "4":
-                    print("Nenhuma das opções anteriores.")
+                    nenhuma_das_opcoes()
 
         case "6":
-            print("Nenhuma das opções anteriores.")
+            nenhuma_das_opcoes()
 
         case _:
             print("Opção inválida, Tente novamente.")
@@ -274,13 +274,13 @@ def economico():
 
             match escolha:
                 case "1":
-                    gemini (BioE1_1)
+                    Ia (E1_1)
                 case "2":
-                    gemini (BioE1_2)
+                    Ia (E1_2)
                 case "3":
-                    gemini (BioE1_3)
+                    Ia (E1_3)
                 case "4":
-                    gemini (BioE1_4)
+                    Ia (E1_4)
                 case "5":
                     print("Nenhuma das opções anteriores.")
 
@@ -291,14 +291,13 @@ def economico():
 
             match escolha:
                 case "1":
-                    gemini (BioE1_1)
+                    Ia (E1_1)
                 case "2":
-                    gemini (BioE1_2)
+                    Ia (E1_2)
                 case "3":
-                    gemini (BioE1_3)
+                    Ia (E1_3)
                 case "4":
-                    print("Nenhuma das opções anteriores.")
-
+                    nenhuma_das_opcoes()
         case "3":
             print("Sobre inflação podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print("| 1 - Aumento dos preços de bens e serviços \n | 2 - Aumento dos custos de produção \n | 3 - Perda de poder de compra da moeda \n | 4 - Nenhuma das opções anteriores")
@@ -306,11 +305,11 @@ def economico():
 
             match escolha:
                 case "1":
-                    gemini (BioE1_1)
+                    Ia (BioE1_1)
                 case "2":
-                    gemini (BioE1_2)
+                    Ia (BioE1_2)
                 case "3":
-                    gemini (BioE1_3)
+                    Ia (BioE1_3)
                 case "4":
                     print("Nenhuma das opções anteriores.")
 
@@ -321,11 +320,11 @@ def economico():
 
             match escolha:
                 case "1":
-                    gemini (BioE1_1)
+                    Ia (BioE1_1)
                 case "2":  
-                    gemini (BioE1_2)
+                    Ia (BioE1_2)
                 case "3":
-                    gemini (BioE1_3)
+                    Ia (BioE1_3)
                 case "4":
                     print("Nenhuma das opções anteriores.")
 
@@ -336,11 +335,11 @@ def economico():
 
             match escolha:
                 case "1":
-                    gemini (BioE1_1)
+                    Ia (BioE1_1)
                 case "2":  
-                    gemini (BioE1_2)
+                    Ia (BioE1_2)
                 case "3":
-                    gemini (BioE1_3)
+                    Ia (BioE1_3)
                 case "4":
                     print("Nenhuma das opções anteriores.")
 
@@ -365,11 +364,11 @@ def bioeconomia():
 
                 match escolha:
                     case "1":
-                        gemini (BioE_1_1)
+                        Ia (BioE1_1)
                     case "2":
-                        gemini (BioE_1_2)
+                        Ia (BioE1_2)
                     case "3":
-                        gemini (BioE_1_3)
+                        Ia (BioE1_3)
                     case "4":
                         nenhuma_das_opcoes()
                     case _:
@@ -382,11 +381,11 @@ def bioeconomia():
                 escolha  = input (" | Escreva aqui: ")
                 match escolha:
                     case "1":
-                        gemini(BioE2_1)
+                        Ia (BioE2_1)
                     case "2":
-                        gemini(BioE2_2)
+                        Ia (BioE2_2)
                     case "3":
-                        gemini(BioE2_3)
+                        Ia (BioE2_3)
                     case "4":
                         nenhuma_das_opcoes()
                     case _:
@@ -399,11 +398,11 @@ def bioeconomia():
                 escolha  = input (" | Escreva aqui: ")
                 match escolha:
                     case "1":
-                        gemini(BioE3_1)
+                        Ia (BioE3_1)
                     case "2":
-                        gemini(BioE3_2)
+                        Ia (BioE3_2)
                     case "3":
-                        gemini(BioE3_3)
+                        Ia (BioE3_3)
                     case "4":
                         nenhuma_das_opcoes()
                     case _:
@@ -416,11 +415,11 @@ def bioeconomia():
                 escolha  = input (" | Escreva aqui: ")
                 match escolha:
                     case "1":
-                        gemini(BioE4_1)
+                        Ia (BioE4_1)
                     case "2":
-                        gemini(BioE4_2)
+                        Ia (BioE4_2)
                     case "3":
-                        gemini(BioE4_3)
+                        Ia (BioE4_3)
                     case "4":
                         nenhuma_das_opcoes()
                     case _:
