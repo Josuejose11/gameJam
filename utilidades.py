@@ -177,17 +177,17 @@ def ambiental():
 
     match escolha:
         case "1":
-            ...
+            print("Poluição é a introdução de substâncias ou energia no meio ambiente que causam efeitos adversos. Isso pode incluir poluição do ar, da água e do solo, afetando a saúde humana e os ecossistemas.")
         case "2":
-            ...
+            print("Desmatamento é a remoção de árvores e vegetação de uma área, geralmente para fins agrícolas ou urbanos, resultando em perda de habitat e biodiversidade.")
         case "3":
-            ...
+            print("Mudanças climáticas são alterações nos padrões climáticos globais, causadas principalmente pela atividade humana, afetando ecossistemas e sociedades.")
         case "4":
-            ...
+            print("Perda de biodiversidade é a diminuição da variedade de espécies vivas em um ecossistema, frequentemente causada por atividades humanas.")
         case "5":
-            ...
+            print("Esgotamento de recursos naturais é a degradação ou exaustão de recursos renováveis ou não renováveis, como água, minerais e florestas.")
         case "6":
-            ...
+            print("Nenhuma das opções anteriores.")
         case _:
             print("Opção inválida, Tente novamente.")
 
@@ -231,27 +231,3 @@ def bioeconomia():
         case "6":
             ...
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
