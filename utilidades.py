@@ -46,7 +46,7 @@ def criar_login(nome, email, senha):
     conn.commit()
     cursor.close()
     conn.close()
-    
+
     ler_usuarios()
 
 #le os usuarios 
@@ -88,4 +88,15 @@ def ler_usuarios():
     
 # def de informacoes
 def informacoes():
-    
+    ...
+
+# def de solucao de problemas
+def solucao_problemas():
+    print("==================")
+    print("==================")
+
+
+
+
+
+
