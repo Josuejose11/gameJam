@@ -151,7 +151,7 @@ def informacoes():
 # def de solucao de problemas
 def solucao_problemas():
     while True:
-        print("==================")
+        print()
         print("Para entendermos sobre o que se trata o problema precisamos saber em qual categoria ele se classifica")
         print(" | 0 - Sair \n | 1 -  Ambiental \n | 2 -  Econômico \n | 3 - Bioeconomia (Ambiental e econômico)")
         escolha = input("| Escreva aqui: ").strip()
@@ -327,6 +327,14 @@ def bioeconomia():
                         print("Opção inválida, Tente novamente.")
                         continue
             case "5":
-                ... 
-    
-            
+                print("Caso nenhuma das opções anteriores se encaixe com o seu problema, você pode entrar em contato com a nossa equipe de suporte para obter assistência personalizada.\n")
+                resp = input("Gostariaa de contatar a nossa equipe de suporte? \n | 1 - Sim \n | 2 - Não \nDigite aqui: ")
+                if resp == "1":
+                    print("Você será redirecionado para a nossa equipe de suporte. Por favor, aguarde um momento.")
+                    ... # def de IA 
+                elif resp == "2":
+                    print("Entendido. Se precisar de ajuda no futuro, não hesite em entrar em contato conosco.")
+                    break
+                else:
+                    print("Opção inválida, Tente novamente.")
+                    continue
