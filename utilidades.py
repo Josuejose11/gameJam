@@ -250,7 +250,7 @@ def ambiental():
                 case "2":
                     gemini (BioE1_2)
                 case "3":
-                    gemini (BioE1_3)
+                    gemini (BioE1_3)    
                 case "4":
                     print("Nenhuma das opções anteriores.")
 
