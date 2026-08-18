@@ -3,7 +3,7 @@ from concurrent.futures import thread
 from google import genai
 from google.genai import types
 import time
-import threading
+import threading        
 
 
 # def Nenhuma das opções anteriores  
