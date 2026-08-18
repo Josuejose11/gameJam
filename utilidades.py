@@ -151,7 +151,7 @@ def informacoes():
 # def de solucao de problemas
 def solucao_problemas():
     while True:
-        print("==================")
+        print()
         print("Para entendermos sobre o que se trata o problema precisamos saber em qual categoria ele se classifica")
         print(" | 0 - Sair \n | 1 -  Ambiental \n | 2 -  Econômico \n | 3 - Bioeconomia (Ambiental e econômico)")
         escolha = input("| Escreva aqui: ").strip()
@@ -159,7 +159,7 @@ def solucao_problemas():
         match escolha:
             case "0":
                 print ("Você saiu")               
-                exit()
+                exit()       
             case "1":
                 ambiental()
             case "2":
@@ -184,25 +184,75 @@ def ambiental():
             print(" | 1 - Poluição do ar \n | 2 - Poluição da água \n | 3 - Poluição do solo \n | 4 - Poluição sonora \n | 5 - Poluição luminosa \n | 6 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
 
+            match escolha:
+                case "1":
+                    gemini (BioE2_1)
+                case "2":
+                    gemini (BioE2_2)
+                case "3":
+                    gemini (BioE2_3)
+                case "4":
+                    gemini (BioE2_4)
+                case "5":
+                    gemini (BioE2_5)
+                case "6":
+                    print("Nenhuma das opções anteriores.")
+
         case "2":
             print("Sobre desmatamento podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print(" | 1 - Desmatamento em larga escala \n | 2 - Desmatamento para agricultura \n | 3 - Desmatamento para urbanização \n | 4 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
+
+            match escolha:
+                case "1":
+                    gemini (BioE2_1)
+                case "2":
+                    gemini (BioE2_2)
+                case "3":
+                    gemini (BioE2_3)
+                case "4":
+                    print("Nenhuma das opções anteriores.")
 
         case "3":
             print("Sobre mudanças climáticas podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print(" | 1 - Aquecimento global \n | 2 - Alterações nos padrões de chuva \n | 3 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
 
+            match escolha:
+                case"1":
+                    gemini (BioE2_1)
+                case "2":
+                    gemini (BioE2_2)
+                case"3":
+                    print("Nenhuma das opções anteriores.")
+
         case "4":
             print("Sobre perda de biodiversidade podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print(" | 1 - Perda de habitat \n | 2 - Extinção de espécies \n | 3 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
 
+            match escolha:
+                case "1":
+                    gemini (BioE2_1)
+                case "2":
+                    gemini (BioE2_2)
+                case "3":
+                    print("Nenhuma das opções anteriores.")
+
         case "5":
             print("Sobre esgotamento de recursos naturais podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print(" | 1 - Esgotamento de água \n | 2 - Esgotamento de minerais \n | 3 - Esgotamento de florestas \n | 4 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
+
+            match escolha:
+                case "1":
+                    gemini (BioE1_1)        
+                case "2":
+                    gemini (BioE1_2)
+                case "3":
+                    gemini (BioE1_3)
+                case "4":
+                    print("Nenhuma das opções anteriores.")
 
         case "6":
             print("Nenhuma das opções anteriores.")
@@ -215,32 +265,84 @@ def economico():
     print("Em quais dessas classificações o seu problema se encaixa?")
     print(" | 1 - Crise econômica \n | 2 - Desemprego \n | 3 - Inflação \n | 4 - Dívida pública \n | 5 - Instabilidade econômica\n | 6 - Nenhuma das opções enteriores")
     escolha = input("Escreva aqui: ")
-    match escolha:
 
+    match escolha:
         case "1":
             print("Sobre crise economica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print("| 1 - Aumento dos custos de produção \n | 2 - Queda na produção \n | 3 - Perda de matéria-prima durante a produção\n | 4 - Individamento Empresarial \n | 5 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
+
+            match escolha:
+                case "1":
+                    gemini (BioE1_1)
+                case "2":
+                    gemini (BioE1_2)
+                case "3":
+                    gemini (BioE1_3)
+                case "4":
+                    gemini (BioE1_4)
+                case "5":
+                    print("Nenhuma das opções anteriores.")
 
         case "2":
             print ("Sobre desemprego podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print("| 1 - Aumento do custo de mão de obra \n | 2 - Redução da demanda por trabalhadores \n | 3 - Substituição de trabalhadores por tecnologia \n | 4 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
 
+            match escolha:
+                case "1":
+                    gemini (BioE1_1)
+                case "2":
+                    gemini (BioE1_2)
+                case "3":
+                    gemini (BioE1_3)
+                case "4":
+                    print("Nenhuma das opções anteriores.")
+
         case "3":
             print("Sobre inflação podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print("| 1 - Aumento dos preços de bens e serviços \n | 2 - Aumento dos custos de produção \n | 3 - Perda de poder de compra da moeda \n | 4 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
+
+            match escolha:
+                case "1":
+                    gemini (BioE1_1)
+                case "2":
+                    gemini (BioE1_2)
+                case "3":
+                    gemini (BioE1_3)
+                case "4":
+                    print("Nenhuma das opções anteriores.")
 
         case "4":
             print("Sobre dívida pública podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print("| 1 - Aumento do endividamento governamental \n | 2 - Redução da receita fiscal \n | 3 - Aumento dos juros da dívida \n | 4 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
 
+            match escolha:
+                case "1":
+                    gemini (BioE1_1)
+                case "2":  
+                    gemini (BioE1_2)
+                case "3":
+                    gemini (BioE1_3)
+                case "4":
+                    print("Nenhuma das opções anteriores.")
+
         case "5":
             print("Sobre instabilidade econômica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema .")
             print("| 1 - Flutuações significativas na economia \n | 2 - Impactos negativos no crescimento econômico \n | 3 - Efeitos sobre o emprego \n | 4 - Nenhuma das opções anteriores")
             escolha = input("Escreva aqui: ")
+
+            match escolha:
+                case "1":
+                    gemini (BioE1_1)
+                case "2":  
+                    gemini (BioE1_2)
+                case "3":
+                    gemini (BioE1_3)
+                case "4":
+                    print("Nenhuma das opções anteriores.")
 
         case "6":
             print("Nenhuma das opções anteriores.")
@@ -254,6 +356,7 @@ def bioeconomia():
         print("Em quais dessas classificações o seu problema se encaixa?")
         print (" | 1 - Desperdício de matéria-prima orgânica\n |  2 - Uso excessivo de recursos naturais\n | 3 - Alto custo de matérias-primas sustentáveis\n | 4 - Falta de tecnologia para reaproveitamento \n | 5 - Nenhuma das opções enteriores")
         escolha  = input ("Escreva aqui: ")
+
         match escolha:
             case "1":
                 print ("Para o problema do desperdicio de matéria-prima orgânica temos algumas classificações, selecione a que mais se encaixa com o seu problema")

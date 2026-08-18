@@ -11,7 +11,6 @@ def nenhuma_das_opcoes():
 # ===========
 
 
-
 # ===========
 # ECONOMICA 
 # ===========
