@@ -80,4 +80,5 @@ while True:
             erro()
             print("Escolha uma das opções dadas")
             continue
-     
+
+        

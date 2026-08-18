@@ -9,7 +9,7 @@ def criar_conexao():
             host='127.0.0.1',
             user='root',
             password='Senac2026',
-            database='carrossel'
+            database='Hakaton'
         )
         return conexao
     except Error as e:
@@ -70,7 +70,7 @@ def criar_login(nome, email, senha):
         return
 
 
-    sql = "INSERT INTO usuarios (nome, email, senha) VALUES (%s, %s, %s)"
+    sql = "INSERT INTO Usuarios (nome, email, senha) VALUES (%s, %s, %s)"
     valores = (nome, email, senha)
     cursor.execute(sql, valores)
     conn.commit()
@@ -230,4 +230,6 @@ def bioeconomia():
             ... 
         case "6":
             ...
-        
+
+
+criar_conexao()
