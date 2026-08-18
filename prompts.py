@@ -43,6 +43,9 @@ E1_2 = "Analise a empresa na classificação Econômica, identificando o Aumento
 E1_3 = "Analise a empresa na classificação Econômica, identificando a Queda na produção. Sugira uma solução sustentável para reduzi-lo. "
 E1_4 = "Analise a empresa na classificação Econômica, identificando o Individamento Empresarial. Sugira uma solução sustentável para reduzi-lo. "
 
+E2_1 = "Analise a empresa na classificação Econômica, identificando o desemprego,identificando o Aumento do custo de mão de obra. Sugira uma solução sustentável para reduzi-lo. "
+
+
 # ===========
 # BIOECONOMICA 
 # ===========
