@@ -47,4 +47,3 @@ def ler_usuarios():
 
 # def de informacoes
 def informacoes():
-    
