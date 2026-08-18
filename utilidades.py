@@ -126,11 +126,11 @@ def informacoes():
 
     while True:
         print("\nEscolha uma opção:")
-        print("1. Sustentabilidade")
-        print("2. Como contribuir")
-        print("3. Benefícios")
-        print("4. Economia")
-        print("5. Sair")
+        print("0 - Sair")
+        print("1 - ...")
+        print("2 - ...")
+        print("3 - ...")
+        print("4 - ...")
         
         escolha = input("Digite o número da opção desejada: ")
 
