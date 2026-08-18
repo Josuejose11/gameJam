@@ -16,6 +16,27 @@ def criar_conexao():
         print(f"Erro ao conectar: {e}")
         return None
 
+#def fazer denovo
+def denovo():
+    while True:
+        print("=================")
+        continuar = input("Deseja fazer mais alguma coisa? \n1 - Sim \n2 - Não \nDigite aqui: ")
+
+        if continuar.strip() == "":
+            print("Campo vazio!")
+            continue
+
+        elif continuar == "1":
+            print("=================\n")
+            return
+
+        elif continuar == "2":
+            print("Você saiu, obrigado por ultilizar nosso sistema!")
+            exit()
+        else: 
+            print("Valor inválido por favor responda com 1 ou 2.")
+        print("=================")
+
 # entra no login do docente 
 def entrar(id_usuario, senha):
     conn = criar_conexao()
@@ -90,18 +111,6 @@ def ler_usuarios():
     
 # def de informacoes
 def informacoes():
-    # Busca os usuários chamando a função correspondente
-    id_usuario, senha = ler_usuarios()
-    
-    # Valida o login usando a função local 'entrar'
-    if id_usuario and entrar(id_usuario, senha):
-        print("\nLogin bem-sucedido!")
-    else:
-        print("Falha no login. Tente novamente.")
-        return  # Encerra a função caso o login falhe
-
-    print("\nBem-vindo ao programa de sustentabilidade!")
-    
     sust = "Sustentabilidade é a capacidade de usar os recursos da Terra com inteligência. O objetivo é atender às necessidades do presente sem acabar com o futuro. O conceito busca um equilíbrio entre cuidar do planeta, fazer a economia crescer e ajudar a sociedade."
     como = "Como podemos contribuir para a sustentabilidade? Podemos economizar energia, reciclar, reduzir o consumo de água, plantar árvores e apoiar empresas que se preocupam com o meio ambiente. Cada pequena ação conta!"
     beneficios = "Os benefícios da sustentabilidade são muitos. Ela ajuda a proteger o meio ambiente, melhora a qualidade de vida das pessoas, promove a economia verde e garante que as futuras gerações possam viver em um planeta saudável."
@@ -131,19 +140,89 @@ def informacoes():
         else:
             print("Opção inválida. Tente novamente.")
 
-def main():
-    informacoes()
-
-
-if __name__ == "__main__":
-    main()
-    ...
-
 # def de solucao de problemas
 def solucao_problemas():
-    print("==================")
-    print("Para entendermos sobe o que se trata o problema precisamos saber em qual categoria ele se classifica")
-    print("| 1 -  Ambiental \n | 2 -  Econômico")
+    while True:
+        print("==================")
+        print("Para entendermos sobre o que se trata o problema precisamos saber em qual categoria ele se classifica")
+        print(" | 0 - Sair \n | 1 -  Ambiental \n | 2 -  Econômico \n | 3 - Bioeconomia (Ambiental e econômico)")
+        escolha = input("| Escreva aqui: ").strip()
+
+        match escolha:
+            case "0":
+                print ("Você saiu")               
+                exit()
+            case "1":
+                ambiental()
+            case "2":
+                economico()
+            case "3":
+                bioeconomia()
+            case _:
+                print("Opção inválida, Tente novamente.")
+                continue
+
+        denovo() 
+
+# def para a funcao ambiental dentro da solucao de problemas
+def ambiental():
+    print("Em quais dessas classificações o seu problema se encaixa?")
+    print(" | 1 - Poluição \n | 2 - Desmatamento \n | 3 - Mudanças climáticas \n | 4 - Perda de biodiversidade \n | 5 - Esgotamento de recursos naturais")
+    escolha = input("Escreva aqui: ")
+
+    match escolha:
+        case "1":
+            ...
+        case "2":
+            ...
+        case "3":
+            ...
+        case "4":
+            ...
+        case "5":
+            ...
+        case _:
+            print("Opção inválida, Tente novamente.")
+
+# def para a funcao economico dentro da solucao de problemas
+def economico():
+    print("Em quais dessas classificações o seu problema se encaixa?")
+    print(" | 1 - Crise econômica \n | 2 - Desemprego \n | 3 - Inflação \n | 4 - Dívida pública \n | 5 - Instabilidade econômica")
+    escolha = input("Escreva aqui: ")
+
+
+
+
+
+
+
+
+    
+# def para a funcao ambiental e economico dentro da solucao de problemas
+def bioeconomia():
+    print("Em quais dessas classificações o seu problema se encaixa?")
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
