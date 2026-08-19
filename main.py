@@ -1,10 +1,12 @@
-
+from sql import sql
 import validacoes
 from utilidades import *
 from validacoes import *
 from menu import *
 from datetime import *
 import pwinput
+
+sql()
 
 print("Seja bem vindo ao nosso sistema!")
 print ("Nossa missão é ajudar empresas a encontrar soluções sustentáveis para os desafios do presente e construir um futuro melhor!")
