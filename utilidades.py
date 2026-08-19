@@ -369,7 +369,7 @@ def economico():
 
             case "2":
                 print ("Sobre desemprego podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-                print("| 1 - Aumento do custo de mão de obra \n | 2 - Redução da demanda por trabalhadores \n | 3 - Substituição de trabalhadores por tecnologia \n | 4 - Nenhuma das opções anteriores")
+                print(" | 1 - Aumento do custo de mão de obra \n | 2 - Redução da demanda por trabalhadores \n | 3 - Substituição de trabalhadores por tecnologia \n | 4 - Nenhuma das opções anteriores")
                 escolha = input("Escreva aqui: ")
 
                 match escolha:
@@ -387,7 +387,7 @@ def economico():
 
             case "3":
                 print("Sobre inflação podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-                print("| 1 - Aumento dos preços de bens e serviços \n | 2 - Aumento dos custos de produção \n | 3 - Perda de poder de compra da moeda \n | 4 - Nenhuma das opções anteriores")
+                print(" | 1 - Aumento dos preços de bens e serviços \n | 2 - Aumento dos custos de produção \n | 3 - Perda de poder de compra da moeda \n | 4 - Nenhuma das opções anteriores")
                 escolha = input("Escreva aqui: ")
 
                 match escolha:
@@ -423,7 +423,7 @@ def economico():
 
             case "5":
                 print("Sobre instabilidade econômica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema .")
-                print("| 1 - Flutuações significativas na economia \n | 2 - Impactos negativos no crescimento econômico \n | 3 - Efeitos sobre o emprego \n | 4 - Nenhuma das opções anteriores")
+                print(" | 1 - Flutuações significativas na economia \n | 2 - Impactos negativos no crescimento econômico \n | 3 - Efeitos sobre o emprego \n | 4 - Nenhuma das opções anteriores")
                 escolha = input("Escreva aqui: ")
 
                 match escolha:
@@ -560,7 +560,7 @@ def gemini(texto):
 
     
     resposta  = "Me dê apenas uma resposta simples e sustentavel, deixe bem claro o lado da sustentabilidade para: " + texto
-    client = genai.Client(api_key="sua-chave-api")  # Substitua pelo seu token de API do Gemini
+    client = genai.Client(api_key="SUA_CHAVE_DE_API")  # Substitua pelo seu token de API do Gemini 
 
     config = types.GenerateContentConfig(
         automatic_function_calling=types.AutomaticFunctionCallingConfig(
@@ -642,6 +642,9 @@ def Ia(msg):
     pensando = False
 
     thread.join()
+    if resposta is None:
+        print("Não foi possível obter uma resposta da IA.")
+        return
     print ("\n\nChat: " + resposta)
 
     salvar_conversa(id_usuario, msg, resposta)
@@ -662,7 +665,8 @@ def Ia(msg):
                     case "1":
                         nenhuma_das_opcoes()
                     case "2":
-                        break
+                        exit()
+                        
             case _:
                 print("Opção inválida, Tente novamente.")
                 return
