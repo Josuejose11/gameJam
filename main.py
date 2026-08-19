@@ -1,6 +1,6 @@
+from utilidades import encontrar_id_usuario
 from sql import sql
 import validacoes
-from utilidades import *
 from validacoes import *
 from menu import *
 from datetime import *
@@ -45,6 +45,7 @@ while True:
             if not entrar(id_usuario, senha):
                 continue
 
+            print ("Você entrou!!")
             menu()
 
         # Criação da conta do usuario

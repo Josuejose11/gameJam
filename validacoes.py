@@ -64,7 +64,7 @@ def validar_email(email):
 
     arroba = ["@gmail.com", "@hotmail.com", "@outlook.com", "@yahoo.com" ]
 
-    if not any(a in Email for a in arroba):
+    if not any(a in email for a in arroba):
         print("Coloque o email corretamente")
         erro()
         print("Email inválido!")
