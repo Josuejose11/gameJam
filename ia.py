@@ -58,7 +58,6 @@ def gemini(texto):
     print ("\n\nChat: " + resposta)
 
 #  def de inicio da conversa c a ia
-#  def de inicio da conversa c a ia
 def Ia(msg):
     global pensando
 
@@ -71,5 +70,21 @@ def Ia(msg):
     pensando = False
     thread.join()
     print ("\n\nChat: " + resposta)
-    
+    print ("---------------")
+    while True:
+        escolha = input("Essa resposta foi útil para você? \n | 1 - Sim \n | 2 - Não \n | Digite aqui: ")
+        match escolha:
+            case "1":
+                print("Fico feliz em ter ajudado! Se precisar de mais alguma coisa, estou à disposição.")
+                break
+            case "2":
+                escolha = input("Gostaria de tentar novamente? \n | 1 - Sim \n | 2 - Não \n | Digite aqui: ")
+                match escolha:
+                    case "1":
+                        nenhuma_das_opcoes()
+                    case "2":
+                        break
+            case _:
+                print("Opção inválida, Tente novamente.")
+                return
 

@@ -174,91 +174,108 @@ def solucao_problemas():
 
 # def para a funcao ambiental dentro da solucao de problemas
 def ambiental():
-    print("Em quais dessas classificações o seu problema se encaixa?")
-    print(" | 1 - Poluição \n | 2 - Desmatamento \n | 3 - Mudanças climáticas \n | 4 - Perda de biodiversidade \n | 5 - Esgotamento de recursos naturais\n | 6 - Nenhuma das opções enteriores")
-    escolha = input("Escreva aqui: ")
+    while True:
+        print("Em quais dessas classificações o seu problema se encaixa?")
+        print(" | 1 - Poluição \n | 2 - Desmatamento \n | 3 - Mudanças climáticas \n | 4 - Perda de biodiversidade \n | 5 - Esgotamento de recursos naturais\n | 6 - Nenhuma das opções enteriores")
+        escolha = input("Escreva aqui: ")
 
-    match escolha:
-        case "1":
-            print ("Sobre poluição podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print(" | 1 - Poluição do ar \n | 2 - Poluição da água \n | 3 - Poluição do solo \n | 4 - Poluição sonora \n | 5 - Poluição luminosa \n | 6 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+        match escolha:
+            case "1":
+                print ("Sobre poluição podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print(" | 1 - Poluição do ar \n | 2 - Poluição da água \n | 3 - Poluição do solo \n | 4 - Poluição sonora \n | 5 - Poluição luminosa \n | 6 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-            match escolha:
-                case "1":
-                    Ia (Bio1_1)
-                case "2":
-                    Ia (Bio1_2)
-                case "3":
-                    Ia (Bio1_3)
-                case "4":
-                    Ia (Bio1_4)
-                case "5":
-                    Ia (Bio1_5)
-                case "6":
-                    nenhuma_das_opcoes(Bio1)
+                match escolha:
+                    case "1":
+                        Ia (Bio1_1)
+                    case "2":
+                        Ia (Bio1_2)
+                    case "3":
+                        Ia (Bio1_3)
+                    case "4":
+                        Ia (Bio1_4)
+                    case "5":
+                        Ia (Bio1_5)
+                    case "6":
+                        nenhuma_das_opcoes(Bio1)
+                    case _:
+                        print("Opção inválida, Tente novamente.")
+                        continue
 
-        case "2":
-            print("Sobre desmatamento podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print(" | 1 - Desmatamento em larga escala \n | 2 - Desmatamento para agricultura \n | 3 - Desmatamento para urbanização \n | 4 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+            case "2":
+                print("Sobre desmatamento podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print(" | 1 - Desmatamento em larga escala \n | 2 - Desmatamento para agricultura \n | 3 - Desmatamento para urbanização \n | 4 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-            match escolha:
-                case "1":
-                    Ia (Bio2_1)
-                case "2":
-                    Ia (Bio2_2)
-                case "3":
-                    Ia (Bio2_3)
-                case "4":
-                    nenhuma_das_opcoes(Bio2)
+                match escolha:
+                    case "1":
+                        Ia (Bio2_1)
+                    case "2":
+                        Ia (Bio2_2)
+                    case "3":
+                        Ia (Bio2_3)
+                    case "4":
+                        nenhuma_das_opcoes(Bio2)
+                    case _:
+                        print("Opção inválida, Tente novamente.")   
+                        continue
 
-        case "3":
-            print("Sobre mudanças climáticas podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print(" | 1 - Aquecimento global \n | 2 - Alterações nos padrões de chuva \n | 3 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+            case "3":
+                print("Sobre mudanças climáticas podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print(" | 1 - Aquecimento global \n | 2 - Alterações nos padrões de chuva \n | 3 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-            match escolha:
-                case"1":
-                    Ia (Bio3_1)
-                case "2":
-                    Ia (Bio3_2)
-                case"3":
-                    nenhuma_das_opcoes(BioE3)
+                match escolha:
+                    case"1":
+                        Ia (Bio3_1)
+                    case "2":
+                        Ia (Bio3_2)
+                    case"3":
+                        nenhuma_das_opcoes(BioE3)
+                    case _:
+                        print("Opção inválida, Tente novamente.")   
+                        continue    
 
-        case "4":
-            print("Sobre perda de biodiversidade podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print(" | 1 - Perda de habitat \n | 2 - Extinção de espécies \n | 3 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+            case "4":
+                print("Sobre perda de biodiversidade podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print(" | 1 - Perda de habitat \n | 2 - Extinção de espécies \n | 3 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-            match escolha:
-                case "1":
-                    Ia (Bio4_1)
-                case "2":
-                    Ia (Bio4_2)
-                case "3":
-                    nenhuma_das_opcoes(Bio4)
+                match escolha:
+                    case "1":
+                        Ia (Bio4_1)
+                    case "2":
+                        Ia (Bio4_2)
+                    case "3":
+                        nenhuma_das_opcoes(Bio4)
+                    case _:
+                        print("Opção inválida, Tente novamente.")
+                        continue
 
-        case "5":
-            print("Sobre esgotamento de recursos naturais podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print(" | 1 - Esgotamento de água \n | 2 - Esgotamento de minerais \n | 3 - Esgotamento de florestas \n | 4 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+            case "5":
+                print("Sobre esgotamento de recursos naturais podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print(" | 1 - Esgotamento de água \n | 2 - Esgotamento de minerais \n | 3 - Esgotamento de florestas \n | 4 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-            match escolha:
-                case "1":
-                    Ia (Bio5_1)        
-                case "2":
-                    Ia (Bio5_2)
-                case "3":
-                    Ia (Bio5_3)
-                case "4":
-                    nenhuma_das_opcoes(Bio5)
+                match escolha:
+                    case "1":
+                        Ia (Bio5_1)        
+                    case "2":
+                        Ia (Bio5_2)
+                    case "3":
+                        Ia (Bio5_3)
+                    case "4":
+                        nenhuma_das_opcoes(Bio5)
+                    case _:
+                        print("Opção inválida, Tente novamente.")
+                        continue
 
-        case "6":
-            nenhuma_das_opcoes()
+            case "6":
+                nenhuma_das_opcoes()
 
-        case _:
-            print("Opção inválida, Tente novamente.")
+            case _:
+                print("Opção inválida, Tente novamente.")
+                continue
 
 # def para a funcao economico dentro da solucao de problemas
 def economico():

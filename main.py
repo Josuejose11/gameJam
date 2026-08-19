@@ -7,7 +7,7 @@ from datetime import *
 import pwinput
 
 print("Seja bem vindo ao nosso sistema!")
-print ("Nossa missão é ajudar empresas a encontrar soluções sustentáveis para os desafios do presente e construir um futuro melhor :)")
+print ("Nossa missão é ajudar empresas a encontrar soluções sustentáveis para os desafios do presente e construir um futuro melhor!")
 
 while True:
     escolha = input("Escolha uma das opões:\n | 0 - Sair \n | 1 - Entrar \n | 2 - Criar login\n | Escreva aqui: ").strip()
