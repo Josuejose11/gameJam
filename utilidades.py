@@ -1,3 +1,5 @@
+from unittest import case
+
 import mysql.connector
 from mysql.connector import Error
 from prompts import *
@@ -105,20 +107,23 @@ def encontrar_id_usuario(email):
     conn = criar_conexao()
 
     if conn is None:
+        print("Erro ao conectar com o banco!")
         return None
 
     cursor = conn.cursor()
 
     try:
-        sql = "SELECT id_usuario FROM usuarios WHERE email = %s"
+        sql = "SELECT id_usuario FROM Usuarios WHERE email = %s"
         cursor.execute(sql, (email,))
 
         resultado = cursor.fetchone()
 
         if resultado:
             return resultado[0]
-
+        print()
         print("Email não encontrado no banco de dados.")
+        print()
+        print("---------------------------------------")
         return None
 
     except Error as e:
@@ -185,10 +190,13 @@ def informacoes():
 
         if escolha == "1":
             print(f"\n{Economico}")
+            print()
         elif escolha == "2":
             print(f"\n{Social}")
+            print()
         elif escolha == "3":
             print(f"\n{Bioeconomico}")
+            print()
         elif escolha == "0":
             print("Saindo...")
             exit()
@@ -204,7 +212,7 @@ def solucao_problemas():
     while True:
         print()
         print("Para entendermos sobre o que se trata o problema precisamos saber em qual categoria ele se classifica")
-        print(" | 0 - Sair \n | 1 -  Ambiental \n | 2 -  Econômico \n | 3 - Bioeconomia (Ambiental e econômico)")
+        print(" | 0 - Sair \n | 1 - Ambiental \n | 2 - Econômico \n | 3 - Bioeconomia (Ambiental e econômico)")
         escolha = input(" | Escreva aqui: ").strip()
         print ("=================")
 
@@ -226,11 +234,11 @@ def solucao_problemas():
 
 # def para a funcao ambiental dentro da solucao de problemas
 def ambiental():
-    from ia import Ia, nenhuma_das_opcoes
     while True:
         print("Em quais dessas classificações o seu problema se encaixa?")
         print(" | 1 - Poluição \n | 2 - Desmatamento \n | 3 - Mudanças climáticas \n | 4 - Perda de biodiversidade \n | 5 - Esgotamento de recursos naturais\n | 6 - Nenhuma das opções enteriores")
         escolha = input("Escreva aqui: ")
+        print ("----------------------------")
 
         match escolha:
             case "1":
@@ -328,11 +336,11 @@ def ambiental():
 
             case _:
                 print("Opção inválida, Tente novamente.")
+                print("----------------------------")
                 continue
 
 # def para a funcao economico dentro da solucao de problemas
 def economico():
-    from ia import Ia, nenhuma_das_opcoes
     while True:
         print("Em quais dessas classificações o seu problema se encaixa?")
         print(" | 1 - Crise econômica \n | 2 - Desemprego \n | 3 - Inflação \n | 4 - Dívida pública \n | 5 - Instabilidade econômica\n | 6 - Nenhuma das opções enteriores")
@@ -440,7 +448,6 @@ def economico():
 
 # def para a funcao ambiental e economico dentro da solucao de problemas
 def bioeconomia():
-    from ia import Ia, nenhuma_das_opcoes
     while True:
         print("Em quais dessas classificações o seu problema se encaixa?")
         print (" | 1 - Desperdício de matéria-prima orgânica\n |  2 - Uso excessivo de recursos naturais\n | 3 - Alto custo de matérias-primas sustentáveis\n | 4 - Falta de tecnologia para reaproveitamento \n | 5 - Nenhuma das opções enteriores")
@@ -519,3 +526,130 @@ def bioeconomia():
             case "5":
                 nenhuma_das_opcoes() 
     
+import utilidades
+from google import genai
+from google.genai import types   
+import time
+import threading  
+
+# def Nenhuma das opções anteriores  
+def nenhuma_das_opcoes(texto = ""):
+    print ("---------------")
+    prompt = input("Fale para a nossa IA sobre o seu problema para que nós possamos te ajudar\nQual o problema presente na sua empresa: ")
+    Ia(texto + prompt)
+
+#def de "Pensando..." 
+def carregando():
+    global pensando
+    
+    while pensando:
+        print("\rPensando   ", end="", flush=True)
+        time.sleep(0.5)
+
+        print("\rPensando.  ", end="", flush=True)
+        time.sleep(0.5)
+
+        print("\rPensando.. ", end="", flush=True)
+        time.sleep(0.5)
+
+        print("\rPensando...", end="", flush=True)
+        time.sleep(0.5)
+
+# Def da conexao e conversa c o gemini
+def gemini(texto):
+    resposta  = "Me dê apenas uma resposta simples para: " + texto
+    client = genai.Client(api_key="sua-chave-aqi")  # Substitua pelo seu token de API do Gemini
+
+    config = types.GenerateContentConfig(
+        automatic_function_calling=types.AutomaticFunctionCallingConfig(
+            disable=True
+        )
+    )
+
+    response = client.models.generate_content(
+        model="gemini-3.6-flash",
+        contents="Chat: "+ resposta,
+        config=config
+    )
+
+    resposta = response.text
+    
+    return resposta 
+
+
+def salvar_conversa(id_usuario, mensagem_usuario, resposta_ia):
+    conn = criar_conexao()
+
+    if conn is None:
+        print("Erro ao conectar com o banco!")
+        return False
+
+    cursor = conn.cursor()
+
+    sql = """
+        INSERT INTO HistoricoConversas
+        (id_usuario_fk, mensagem_usuario, resposta_ia)
+        VALUES (%s, %s, %s)
+    """
+
+    valores = (id_usuario, mensagem_usuario, resposta_ia)
+
+    cursor.execute(sql, valores)
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+    return True
+
+#  def de inicio da conversa c a ia
+def Ia(msg):
+    while True:
+        email = input("Antes de enviar a mensagem, precisamos do seu email: ")
+        id_usuario = encontrar_id_usuario(email)
+
+        if id_usuario is None:
+            print("Não foi possível encontrar esse usuário.")
+            continue
+        break
+
+    global pensando
+
+    pensando = True
+    thread = threading.Thread(target=carregando)
+    thread.start()
+
+    resposta = gemini(msg)
+
+    pensando = False
+
+    thread.join()
+    print ("\n\nChat: " + resposta)
+
+    salvar_conversa(id_usuario, msg, resposta)
+
+    print ("---------------")
+
+    while True:
+        escolha = input("Essa resposta foi útil para você? \n | 1 - Sim \n | 2 - Não \n | Digite aqui: ")
+        match escolha:
+            case "1":
+                print("Fico feliz em ter ajudado! Se precisar de mais alguma coisa, estou à disposição.")
+                break
+            case "2":
+                escolha = input("Gostaria de tentar novamente? \n | 1 - Sim \n | 2 - Não \n | Digite aqui: ")
+                match escolha:
+                    case "1":
+                        nenhuma_das_opcoes()
+                    case "2":
+                        break
+            case _:
+                print("Opção inválida, Tente novamente.")
+                return
+
+                
+
+    
+
+    
+
