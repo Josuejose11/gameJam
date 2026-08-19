@@ -1,8 +1,7 @@
-import mysql.connector  
+import mysql.connector
 from mysql.connector import Error
-from validacoes import * 
-from prompts import *  
-from ia import *
+from validacoes import *
+from prompts import *
 
 
 # Cria conexao com o sql
@@ -196,6 +195,7 @@ def solucao_problemas():
 
 # def para a funcao ambiental dentro da solucao de problemas
 def ambiental():
+    from ia import Ia, nenhuma_das_opcoes
     while True:
         print("Em quais dessas classificações o seu problema se encaixa?")
         print(" | 1 - Poluição \n | 2 - Desmatamento \n | 3 - Mudanças climáticas \n | 4 - Perda de biodiversidade \n | 5 - Esgotamento de recursos naturais\n | 6 - Nenhuma das opções enteriores")
@@ -301,94 +301,115 @@ def ambiental():
 
 # def para a funcao economico dentro da solucao de problemas
 def economico():
-    print("Em quais dessas classificações o seu problema se encaixa?")
-    print(" | 1 - Crise econômica \n | 2 - Desemprego \n | 3 - Inflação \n | 4 - Dívida pública \n | 5 - Instabilidade econômica\n | 6 - Nenhuma das opções enteriores")
-    escolha = input("Escreva aqui: ")
+    from ia import Ia, nenhuma_das_opcoes
+    while True:
+        print("Em quais dessas classificações o seu problema se encaixa?")
+        print(" | 1 - Crise econômica \n | 2 - Desemprego \n | 3 - Inflação \n | 4 - Dívida pública \n | 5 - Instabilidade econômica\n | 6 - Nenhuma das opções enteriores")
+        escolha = input("Escreva aqui: ")
 
-    match escolha:
-        case "1":
-            print("Sobre crise economica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print("| 1 - Aumento dos custos de produção \n | 2 - Queda na produção \n | 3 - Perda de matéria-prima durante a produção\n | 4 - Individamento Empresarial \n | 5 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+        match escolha:
+            case "1":
+                print("Sobre crise economica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print("| 1 - Aumento dos custos de produção \n | 2 - Queda na produção \n | 3 - Perda de matéria-prima durante a produção\n | 4 - Individamento Empresarial \n | 5 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-            match escolha:
-                case "1":
-                    Ia (E1_1)
-                case "2":
-                    Ia (E1_2)
-                case "3":
-                    Ia (E1_3)
-                case "4":
-                    Ia (E1_4)
-                case "5":
-                    nenhuma_das_opcoes(E1)
+                match escolha:
+                    case "1":
+                        Ia (E1_1)
+                    case "2":
+                        Ia (E1_2)
+                    case "3":
+                        Ia (E1_3)
+                    case "4":
+                        Ia (E1_4)
+                    case "5":
+                        nenhuma_das_opcoes(E1)
+                    case _:
+                        print("Opção inválida, Tente novamente.")
+                        continue
 
-        case "2":
-            print ("Sobre desemprego podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print("| 1 - Aumento do custo de mão de obra \n | 2 - Redução da demanda por trabalhadores \n | 3 - Substituição de trabalhadores por tecnologia \n | 4 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+            case "2":
+                print ("Sobre desemprego podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print("| 1 - Aumento do custo de mão de obra \n | 2 - Redução da demanda por trabalhadores \n | 3 - Substituição de trabalhadores por tecnologia \n | 4 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-            match escolha:
-                case "1":
-                    Ia (E2_1)
-                case "2":
-                    Ia (E2_2)
-                case "3":
-                    Ia (E2_3)
-                case "4":
-                    nenhuma_das_opcoes(E2)
-        case "3":
-            print("Sobre inflação podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print("| 1 - Aumento dos preços de bens e serviços \n | 2 - Aumento dos custos de produção \n | 3 - Perda de poder de compra da moeda \n | 4 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+                match escolha:
+                    case "1":
+                        Ia (E2_1)
+                    case "2":
+                        Ia (E2_2)
+                    case "3":
+                        Ia (E2_3)
+                    case "4":
+                        nenhuma_das_opcoes(E2)
+                    case _:
+                        print("Opção inválida, Tente novamente.")
+                        continue 
 
-            match escolha:
-                case "1":
-                    Ia (E3_1)
-                case "2":
-                    Ia (E3_2)
-                case "3":
-                    Ia (E3_3)
-                case "4":
-                    nenhuma_das_opcoes(E3)
+            case "3":
+                print("Sobre inflação podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print("| 1 - Aumento dos preços de bens e serviços \n | 2 - Aumento dos custos de produção \n | 3 - Perda de poder de compra da moeda \n | 4 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-        case "4":
-            print("Sobre dívida pública podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-            print("| 1 - Aumento do endividamento governamental \n | 2 - Redução da receita fiscal \n | 3 - Aumento dos juros da dívida \n | 4 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+                match escolha:
+                    case "1":
+                        Ia (E3_1)
+                    case "2":
+                        Ia (E3_2)
+                    case "3":
+                        Ia (E3_3)
+                    case "4":
+                        nenhuma_das_opcoes(E3)
+                    case _:
+                        print("Opção inválida, Tente novamente.")
+                        continue
 
-            match escolha:
-                case "1":
-                    Ia (E4_1)
-                case "2":  
-                    Ia (E4_2)
-                case "3":
-                    Ia (E4_3)
-                case "4":
-                    nenhuma_das_opcoes(E4)
-        case "5":
-            print("Sobre instabilidade econômica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema .")
-            print("| 1 - Flutuações significativas na economia \n | 2 - Impactos negativos no crescimento econômico \n | 3 - Efeitos sobre o emprego \n | 4 - Nenhuma das opções anteriores")
-            escolha = input("Escreva aqui: ")
+            case "4":
+                print("Sobre dívida pública podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
+                print("| 1 - Aumento do endividamento governamental \n | 2 - Redução da receita fiscal \n | 3 - Aumento dos juros da dívida \n | 4 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-            match escolha:
-                case "1":
-                    Ia (E5_1)
-                case "2":  
-                    Ia (E5_2)
-                case "3":
-                    Ia (E5_3)
-                case "4":
-                    nenhuma_das_opcoes(E5)
+                match escolha:
+                    case "1":
+                        Ia (E4_1)
+                    case "2":  
+                        Ia (E4_2)
+                    case "3":
+                        Ia (E4_3)
+                    case "4":
+                        nenhuma_das_opcoes(E4)
+                    case _: 
+                        print("Opção inválida, Tente novamente.")
+                        continue
 
-        case "6":
-            nenhuma_das_opcoes()
+            case "5":
+                print("Sobre instabilidade econômica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema .")
+                print("| 1 - Flutuações significativas na economia \n | 2 - Impactos negativos no crescimento econômico \n | 3 - Efeitos sobre o emprego \n | 4 - Nenhuma das opções anteriores")
+                escolha = input("Escreva aqui: ")
 
-        case _:
-            print("Opção inválida, Tente novamente.")
+                match escolha:
+                    case "1":
+                        Ia (E5_1)
+                    case "2":  
+                        Ia (E5_2)
+                    case "3":
+                        Ia (E5_3)
+                    case "4":
+                        nenhuma_das_opcoes(E5)
+                    case _:
+                        print("Opção inválida, Tente novamente.")
+                        continue
+
+            case "6":
+                nenhuma_das_opcoes()
+
+            case _:
+                print("Opção inválida, Tente novamente.")
+                continue    
 
 # def para a funcao ambiental e economico dentro da solucao de problemas
 def bioeconomia():
+    from ia import Ia, nenhuma_das_opcoes
     while True:
         print("Em quais dessas classificações o seu problema se encaixa?")
         print (" | 1 - Desperdício de matéria-prima orgânica\n |  2 - Uso excessivo de recursos naturais\n | 3 - Alto custo de matérias-primas sustentáveis\n | 4 - Falta de tecnologia para reaproveitamento \n | 5 - Nenhuma das opções enteriores")
