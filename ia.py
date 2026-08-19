@@ -14,7 +14,7 @@ def nenhuma_das_opcoes(texto = ""):
 #def de "Pensando..." 
 def carregando():
     global pensando
-    
+
     while pensando:
         print("\rPensando   ", end="", flush=True)
         time.sleep(0.5)
