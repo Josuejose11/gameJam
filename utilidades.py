@@ -42,25 +42,42 @@ def denovo():
 # entra no login do docente 
 def entrar(id_usuario, senha):
     conn = criar_conexao()
-    if not conn:
-        return False
-        
-    cursor = conn.cursor()
-    sql = "SELECT * FROM usuarios WHERE id_usuario = %s AND senha = %s"
-    valores = (id_usuario, senha)
-    cursor.execute(sql, valores)
-    resultado = cursor.fetchall()  
-   
-    cursor.close()
-    conn.close()
- 
-    if not resultado:
-        print("------------")
-        print("Senha ou usuário não encontrado")
-        print("------------")
+
+    if conn is None:
+        print("Erro ao conectar com o banco!")
         return False
 
-    return True
+    cursor = conn.cursor()
+
+    try:
+        sql = """
+            SELECT id_usuario
+            FROM usuarios
+            WHERE id_usuario = %s AND senha = %s
+        """
+
+        valores = (id_usuario, senha)
+
+        cursor.execute(sql, valores)
+        resultado = cursor.fetchone()
+
+    except Error as e:
+        print(f"Erro ao realizar login: {e}")
+        return False
+
+    finally:
+        cursor.close()
+        conn.close()
+
+    if resultado:
+        return True
+
+    print("------------")
+    print("Senha ou usuário não encontrado")
+    print("------------")
+
+    return False
+
 
 # cria o login 
 def criar_login(nome, email, senha):
@@ -87,25 +104,32 @@ def criar_login(nome, email, senha):
 #encontrar id usuario
 def encontrar_id_usuario(email):
     conn = criar_conexao()
-    if not conn:
+
+    if conn is None:
         return None
 
     cursor = conn.cursor()
-    sql = "SELECT id_usuario FROM usuarios WHERE email = %s"
-    valores = (email,)
-    if valores not in sql:
+
+    try:
+        sql = "SELECT id_usuario FROM usuarios WHERE email = %s"
+        cursor.execute(sql, (email,))
+
+        resultado = cursor.fetchone()
+
+        if resultado:
+            return resultado[0]
+
         print("Email não encontrado no banco de dados.")
         return None
-    cursor.execute(sql, valores)
-    resultado = cursor.fetchone()
 
-    cursor.close()
-    conn.close()
-
-    if resultado:
-        return resultado[0]
-    else:
+    except Error as e:
+        print(f"Erro ao procurar usuário: {e}")
         return None
+
+    finally:
+        cursor.close()
+        conn.close()
+
 
 
 # lê os usuários e RETORNA os valores
