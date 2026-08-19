@@ -1,4 +1,4 @@
-from ia import gemini
+
 
 # ===========
 # AMBIENTAL 

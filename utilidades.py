@@ -1,5 +1,5 @@
 from unittest import case
-
+from google.genai import errors
 import mysql.connector
 from mysql.connector import Error
 from prompts import *
@@ -557,8 +557,10 @@ def carregando():
 
 # Def da conexao e conversa c o gemini
 def gemini(texto):
-    resposta  = "Me dê apenas uma resposta simples para: " + texto
-    client = genai.Client(api_key="sua-chave-aqi")  # Substitua pelo seu token de API do Gemini
+
+    
+    resposta  = "Me dê apenas uma resposta simples e sustentavel, deixe bem claro o lado da sustentabilidade para: " + texto
+    client = genai.Client(api_key="sua-chave-api")  # Substitua pelo seu token de API do Gemini
 
     config = types.GenerateContentConfig(
         automatic_function_calling=types.AutomaticFunctionCallingConfig(
@@ -573,8 +575,24 @@ def gemini(texto):
     )
 
     resposta = response.text
+
+    try:
+        response = client.models.generate_content(
+        model="gemini-3.6-flash",
+        contents="Chat: " + resposta,
+        config=config
+    )
+
+    except errors.ServerError:
+        print("O servidor do Gemini está temporariamente indisponível.")
+        print("Tente novamente em alguns segundos.")
+        return None
     
-    return resposta 
+    return resposta
+
+
+
+    
 
 
 def salvar_conversa(id_usuario, mensagem_usuario, resposta_ia):
@@ -635,7 +653,9 @@ def Ia(msg):
         match escolha:
             case "1":
                 print("Fico feliz em ter ajudado! Se precisar de mais alguma coisa, estou à disposição.")
-                break
+                denovo()
+                if not denovo():
+                    exit()
             case "2":
                 escolha = input("Gostaria de tentar novamente? \n | 1 - Sim \n | 2 - Não \n | Digite aqui: ")
                 match escolha:
@@ -650,6 +670,5 @@ def Ia(msg):
                 
 
     
-
     
 
