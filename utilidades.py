@@ -154,7 +154,7 @@ def informacoes():
         print("2 - Social")
         print("3 - Bioeconomico")
         
-        escolha = input("Digite o número da opção desejada: ")
+        escolha = input("Digite a opção desejada: ")
 
         if escolha == "1":
             print(f"\n{Economico}")
