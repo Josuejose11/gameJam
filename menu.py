@@ -5,7 +5,7 @@ def menu():
     while True:
         print("\33[34m===============\033[m")
         print("Selecione o que você gostaria de fazer:")
-        escolha = input(" | 0 - Sair \n | 1 - Informações sobre a sustentabilidade \n | 2 - Solução de problemas\n | Escreva aqui: ").replace(" ", "")
+        escolha = input(" | 0 - Sair \n | 1 - Informações sobre a sustentabilidade \n | 2 - Solução de problemas\n | 3 - Acessar histórico \n | Escreva aqui: ").replace(" ", "")
         print("\33[34m===============\033[m")
 
         match escolha:
@@ -18,6 +18,11 @@ def menu():
 
             case "2":
                 solucao_problemas()
+
+            case "3":
+                if not ler_usuarios():
+                    continue
+                acessar_historico()
 
             case _:
                 erro()
