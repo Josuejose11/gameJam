@@ -1,3 +1,4 @@
+import utilidades
 from utilidades import *
 import mysql.connector
 from mysql.connector import Error
