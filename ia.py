@@ -6,20 +6,16 @@ import time
 import threading  
 
 # def Nenhuma das opções anteriores  
-def nenhuma_das_opcoes(texto = None):
+def nenhuma_das_opcoes(texto = ""):
     print ("---------------")
     prompt = input("Fale para a nossa IA sobre o seu problema para que nós possamos te ajudar\nQual o problema presente na sua empresa: ")
     Ia(texto + prompt)
 
 #def de "Pensando..." 
 def carregando():
-    pensando = True
+    global pensando
     
-    thread = threading.Thread(target=carregando)
-    thread.start()
-
     while pensando:
-
         print("\rPensando   ", end="", flush=True)
         time.sleep(0.5)
 
@@ -34,8 +30,6 @@ def carregando():
 
 # Def da conexao e conversa c o gemini
 def gemini(texto):
-    
-
     resposta  = "Me dê apenas uma resposta simples para: " + texto
     client = genai.Client(api_key="sua_chave_de_api")  # Substitua pelo seu token de API do Gemini
 
@@ -47,17 +41,13 @@ def gemini(texto):
 
     response = client.models.generate_content(
         model="gemini-3.6-flash",
-        contents="Chat: "+texto,
+        contents="Chat: "+ resposta,
         config=config
     )
 
     resposta = response.text
-    pensando = False
-    thread.join()
     
-
-
-    print ("\n\nChat: " + resposta)
+    return resposta 
 
 
 def salvar_conversa(id_usuario, mensagem_usuario, resposta_ia):

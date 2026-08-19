@@ -168,6 +168,8 @@ def informacoes():
         else:
             print("Opção inválida. Tente novamente.")
 
+        denovo()
+
 # def de solucao de problemas
 def solucao_problemas():
     while True:
@@ -465,5 +467,3 @@ def bioeconomia():
             case "5":
                 nenhuma_das_opcoes() 
     
-
-informacoes()
