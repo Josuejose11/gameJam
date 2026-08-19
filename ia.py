@@ -9,9 +9,10 @@ pensando = False
 
 
 # def Nenhuma das opções anteriores  
-def nenhuma_das_opcoes():
-    prompt = input("Fale para a nossa IA o seu problema para que nós possamos te ajudar: ")
-    gemini(prompt)
+def nenhuma_das_opcoes(texto = None):
+    print ("---------------")
+    prompt = input("Fale para a nossa IA sobre o seu problema para que nós possamos te ajudar\nQual o problema presente na sua empresa: ")
+    Ia(texto + prompt)
 
 #def de "Pensando..." 
 def carregando():

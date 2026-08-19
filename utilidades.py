@@ -196,7 +196,7 @@ def ambiental():
                 case "5":
                     Ia (Bio1_5)
                 case "6":
-                    nenhuma_das_opcoes()
+                    nenhuma_das_opcoes(Bio1)
 
         case "2":
             print("Sobre desmatamento podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -211,7 +211,7 @@ def ambiental():
                 case "3":
                     Ia (Bio2_3)
                 case "4":
-                    nenhuma_das_opcoes()
+                    nenhuma_das_opcoes(Bio2)
 
         case "3":
             print("Sobre mudanças climáticas podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -224,7 +224,7 @@ def ambiental():
                 case "2":
                     Ia (Bio3_2)
                 case"3":
-                    nenhuma_das_opcoes()
+                    nenhuma_das_opcoes(BioE3)
 
         case "4":
             print("Sobre perda de biodiversidade podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -237,7 +237,7 @@ def ambiental():
                 case "2":
                     Ia (Bio4_2)
                 case "3":
-                    nenhuma_das_opcoes()
+                    nenhuma_das_opcoes(Bio4)
 
         case "5":
             print("Sobre esgotamento de recursos naturais podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -252,7 +252,7 @@ def ambiental():
                 case "3":
                     Ia (Bio5_3)
                 case "4":
-                    nenhuma_das_opcoes()
+                    nenhuma_das_opcoes(Bio5)
 
         case "6":
             nenhuma_das_opcoes()
@@ -370,7 +370,7 @@ def bioeconomia():
                     case "3":
                         Ia (BioE1_3)
                     case "4":
-                        nenhuma_das_opcoes()
+                        nenhuma_das_opcoes(BioE1)
                     case _:
                         print("Opção inválida, Tente novamente.")
                         continue
@@ -387,7 +387,7 @@ def bioeconomia():
                     case "3":
                         Ia (BioE2_3)
                     case "4":
-                        nenhuma_das_opcoes()
+                        nenhuma_das_opcoes(BioE2)
                     case _:
                         print("Opção inválida, Tente novamente.")
                         continue
@@ -404,7 +404,7 @@ def bioeconomia():
                     case "3":
                         Ia (BioE3_3)
                     case "4":
-                        nenhuma_das_opcoes()
+                        nenhuma_das_opcoes(BioE3)
                     case _:
                         print("Opção inválida, Tente novamente.")
                         continue
@@ -421,7 +421,7 @@ def bioeconomia():
                     case "3":
                         Ia (BioE4_3)
                     case "4":
-                        nenhuma_das_opcoes()
+                        nenhuma_das_opcoes(BioE4)
                     case _:
                         print("Opção inválida, Tente novamente.")
                         continue
