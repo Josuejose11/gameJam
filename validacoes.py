@@ -152,14 +152,12 @@ def validar_senha():
 
 # valida o id do docente que o usuario colocou 
 def validar_id():
-    
-    while True:
-        conn = criar_conexao()
-        cursor = conn.cursor()
-        
-        id_usuario = input("Digite seu ID: ").replace(" ", "")
 
-        if id_usuario.strip() == "":
+    while True:
+
+        id_usuario = input("Digite seu ID: ").strip()
+
+        if id_usuario == "":
             print("Campo vazio!")
             continue
 
@@ -167,20 +165,40 @@ def validar_id():
             print("Apenas números!")
             continue
 
-        sql = "SELECT id_usuario FROM usuarios WHERE id_usuario = %s"
+        conn = criar_conexao()
 
-        cursor.execute(sql, (id_usuario,))
+        if conn is None:
+            print("Erro ao conectar com o banco de dados!")
+            return False
 
-        resultado = cursor.fetchone()
+        cursor = conn.cursor()
 
-        if resultado is None:
-            print("ID inválido!")
-            continue
-        
-        cursor.close()
-        conn.close()
+        try:
 
-        return id_usuario
+            sql = """
+                SELECT id_usuario
+                FROM usuarios
+                WHERE id_usuario = %s
+            """
+
+            cursor.execute(sql, (id_usuario,))
+            resultado = cursor.fetchone()
+
+            if resultado is None:
+                print("ID inválido!")
+                continue
+
+            return id_usuario
+
+        except Error as e:
+
+            print(f"Erro ao consultar o ID: {e}")
+            return False
+
+        finally:
+
+            cursor.close()
+            conn.close()
 
 
 
