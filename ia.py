@@ -1,11 +1,8 @@
-from concurrent.futures import thread
-from urllib import response
-
 from google import genai
 from google.genai import types
+from utilidades import *     
 import time
-import threading
-
+import threading  
 
 # def Nenhuma das opções anteriores  
 def nenhuma_das_opcoes(texto = None):
@@ -39,7 +36,7 @@ def gemini(texto):
     
 
     resposta  = "Me dê apenas uma resposta simples para: " + texto
-    client = genai.Client(api_key="Sua chave de API do Gemini aqui")  # Substitua pelo seu token de API do Gemini
+    client = genai.Client(api_key="sua_chave_de_api")  # Substitua pelo seu token de API do Gemini
 
     config = types.GenerateContentConfig(
         automatic_function_calling=types.AutomaticFunctionCallingConfig(
@@ -61,8 +58,37 @@ def gemini(texto):
 
     print ("\n\nChat: " + resposta)
 
+
+def salvar_conversa(id_usuario, mensagem_usuario, resposta_ia):
+    conn = criar_conexao()
+
+    if conn is None:
+        print("Erro ao conectar com o banco!")
+        return False
+
+    cursor = conn.cursor()
+
+    sql = """
+        INSERT INTO HistoricoConversas
+        (id_usuario_fk, mensagem_usuario, resposta_ia)
+        VALUES (%s, %s, %s)
+    """
+
+    valores = (id_usuario, mensagem_usuario, resposta_ia)
+
+    cursor.execute(sql, valores)
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+    return True
+
 #  def de inicio da conversa c a ia
 def Ia(msg):
+    email = input("Antes de enviar a mensagem, precisamos do seu email: ")
+    id_usuario = encontrar_id_usuario(email)
+
     global pensando
 
     pensando = True
@@ -71,10 +97,12 @@ def Ia(msg):
 
     resposta = gemini(msg)
 
-    resposta = response.text
     pensando = False
     thread.join()
     print ("\n\nChat: " + resposta)
+    salvar_conversa(id_usuario, msg, resposta)
+
+    
 
     
 
