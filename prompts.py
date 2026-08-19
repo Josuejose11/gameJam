@@ -31,6 +31,7 @@ Bio5_3 = "Analise a empresa na classificação Ambiental, identificando o proble
 # ===========
 # ECONOMICA 
 # ===========
+E1 = "Esta mensagem é uma mensagem automática: Analise o problema da empresa na classificação Econômica, identificando o aumento dos custos de produção. Sugira uma solução sustentável para reduzi-lo seguindo o próximo prompt:"
 E1_1 = "Analise a empresa na classificação Econômica, identificando o Aumento dos custos de produção. Sugira uma solução sustentável para reduzi-lo. "
 E1_2 = "Analise a empresa na classificação Econômica, identificando o Aumento dos custos de mão de obra. Sugira uma solução sustentável para reduzi-lo. "
 E1_3 = "Analise a empresa na classificação Econômica, identificando a Queda na produção. Sugira uma solução sustentável para reduzi-lo. "

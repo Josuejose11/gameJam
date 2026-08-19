@@ -282,7 +282,7 @@ def economico():
                 case "4":
                     Ia (E1_4)
                 case "5":
-                    print("Nenhuma das opções anteriores.")
+                    nenhuma_das_opcoes(E1)
 
         case "2":
             print ("Sobre desemprego podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -297,7 +297,7 @@ def economico():
                 case "3":
                     Ia (E1_3)
                 case "4":
-                    nenhuma_das_opcoes()
+                    nenhuma_das_opcoes(E2)
         case "3":
             print("Sobre inflação podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
             print("| 1 - Aumento dos preços de bens e serviços \n | 2 - Aumento dos custos de produção \n | 3 - Perda de poder de compra da moeda \n | 4 - Nenhuma das opções anteriores")
@@ -311,7 +311,7 @@ def economico():
                 case "3":
                     Ia (BioE1_3)
                 case "4":
-                    print("Nenhuma das opções anteriores.")
+                    nenhuma_das_opcoes(E3)
 
         case "4":
             print("Sobre dívida pública podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
@@ -326,8 +326,7 @@ def economico():
                 case "3":
                     Ia (BioE1_3)
                 case "4":
-                    print("Nenhuma das opções anteriores.")
-
+                    nenhuma_das_opcoes(E4)
         case "5":
             print("Sobre instabilidade econômica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema .")
             print("| 1 - Flutuações significativas na economia \n | 2 - Impactos negativos no crescimento econômico \n | 3 - Efeitos sobre o emprego \n | 4 - Nenhuma das opções anteriores")
@@ -341,11 +340,11 @@ def economico():
                 case "3":
                     Ia (BioE1_3)
                 case "4":
-                    print("Nenhuma das opções anteriores.")
+                    nenhuma_das_opcoes(E5)
 
         case "6":
-            print("Nenhuma das opções anteriores.")
-            
+            nenhuma_das_opcoes()
+
         case _:
             print("Opção inválida, Tente novamente.")
 
