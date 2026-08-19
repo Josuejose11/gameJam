@@ -1,11 +1,7 @@
-from concurrent.futures import thread
-from urllib import response
-
 from google import genai
 from google.genai import types
 import time
-import threading
-
+import threading  
 
 # def Nenhuma das opções anteriores  
 def nenhuma_das_opcoes(texto = None):
@@ -62,6 +58,7 @@ def gemini(texto):
     print ("\n\nChat: " + resposta)
 
 #  def de inicio da conversa c a ia
+#  def de inicio da conversa c a ia
 def Ia(msg):
     global pensando
 
@@ -71,10 +68,8 @@ def Ia(msg):
 
     resposta = gemini(msg)
 
-    resposta = response.text
     pensando = False
     thread.join()
     print ("\n\nChat: " + resposta)
-
     
 
