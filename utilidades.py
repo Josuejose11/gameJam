@@ -64,20 +64,25 @@ def entrar(id_usuario, senha):
 
 # cria o login 
 def criar_login(nome, email, senha):
-    conn = criar_conexao() 
-    cursor = conn.cursor()
+    conn = criar_conexao()
 
     if conn is None:
         print("Erro ao conectar com o banco!")
-        return
+        return False
 
+    cursor = conn.cursor()
 
     sql = "INSERT INTO Usuarios (nome, email, senha) VALUES (%s, %s, %s)"
     valores = (nome, email, senha)
+
     cursor.execute(sql, valores)
     conn.commit()
+
     cursor.close()
     conn.close()
+
+    return True
+
 
 #encontrar id usuario
 def encontrar_id_usuario(email):
