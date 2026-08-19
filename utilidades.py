@@ -291,11 +291,11 @@ def economico():
 
             match escolha:
                 case "1":
-                    Ia (E1_1)
+                    Ia (E2_1)
                 case "2":
-                    Ia (E1_2)
+                    Ia (E2_2)
                 case "3":
-                    Ia (E1_3)
+                    Ia (E2_3)
                 case "4":
                     nenhuma_das_opcoes(E2)
         case "3":
@@ -305,11 +305,11 @@ def economico():
 
             match escolha:
                 case "1":
-                    Ia (BioE1_1)
+                    Ia (E3_1)
                 case "2":
-                    Ia (BioE1_2)
+                    Ia (E3_2)
                 case "3":
-                    Ia (BioE1_3)
+                    Ia (E3_3)
                 case "4":
                     nenhuma_das_opcoes(E3)
 
@@ -320,11 +320,11 @@ def economico():
 
             match escolha:
                 case "1":
-                    Ia (BioE1_1)
+                    Ia (E4_1)
                 case "2":  
-                    Ia (BioE1_2)
+                    Ia (E4_2)
                 case "3":
-                    Ia (BioE1_3)
+                    Ia (E4_3)
                 case "4":
                     nenhuma_das_opcoes(E4)
         case "5":
@@ -334,11 +334,11 @@ def economico():
 
             match escolha:
                 case "1":
-                    Ia (BioE1_1)
+                    Ia (E5_1)
                 case "2":  
-                    Ia (BioE1_2)
+                    Ia (E5_2)
                 case "3":
-                    Ia (BioE1_3)
+                    Ia (E5_3)
                 case "4":
                     nenhuma_das_opcoes(E5)
 
