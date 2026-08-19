@@ -1,4 +1,5 @@
 from concurrent.futures import thread
+from urllib import response
 
 from google import genai
 from google.genai import types
@@ -59,3 +60,21 @@ def gemini(texto):
 
 
     print ("\n\nChat: " + resposta)
+
+#  def de inicio da conversa c a ia
+def Ia(msg):
+    global pensando
+
+    pensando = True
+    thread = threading.Thread(target=carregando)
+    thread.start()
+
+    resposta = gemini(msg)
+
+    resposta = response.text
+    pensando = False
+    thread.join()
+    print ("\n\nChat: " + resposta)
+
+    
+

@@ -37,18 +37,22 @@ E1_2 = "Analise a empresa na classificação Econômica, identificando o Aumento
 E1_3 = "Analise a empresa na classificação Econômica, identificando a Queda na produção. Sugira uma solução sustentável para reduzi-lo. "
 E1_4 = "Analise a empresa na classificação Econômica, identificando o Individamento Empresarial. Sugira uma solução sustentável para reduzi-lo. "
 
+E2 = "Esta mensagem é uma mensagem automática: Analise o problema da empresa na classificação Econômica, identificando o desemprego. Sugira uma solução sustentável para reduzi-lo seguindo o próximo prompt:"
 E2_1 = "Analise a empresa na classificação Econômica, identificando o desemprego,identificando o Aumento do custo de mão de obra. Sugira uma solução sustentável para reduzi-lo. "
 E2_2 = "Analise a empresa na classificação Econômica, identificando o desemprego,identificando a Redução da demanda por trabalhadores. Sugira uma solução sustentável para reduzi-lo. "
 E2_3 = "Analise a empresa na classificação Econômica, identificando o desemprego,identificando a Substituição de trabalhadores por tecnologia. Sugira uma solução sustentável para reduzi-lo. "
 
+E3 = "Esta mensagem é uma mensagem automática: Analise o problema da empresa na classificação Econômica, identificando a inflação. Sugira uma solução sustentável para reduzi-lo seguindo o próximo prompt:"
 E3_1 = "Analise a empresa na classificação Econômica, identificando a inflacao,identificando o Aumento dos preços de bens e serviços. Sugira uma solução sustentável para reduzi-lo. "
 E3_2 = "Analise a empresa na classificação Econômica, identificando a inflacao,identificando o Aumento dos custos de produção. Sugira uma solução sustentável para reduzi-lo. "
 E3_3 = "Analise a empresa na classificação Econômica, identificando a inflacao,identificando a Perda de poder de compra da moeda. Sugira uma solução sustentável para reduzi-lo. "
 
+E4 = "Esta mensagem é uma mensagem automática: Analise o problema da empresa na classificação Econômica, identificando a dívida pública. Sugira uma solução sustentável para reduzi-lo seguindo o próximo prompt:"
 E4_1 = "Analise a empresa na classificação Econômica, identificando a dívida pública, e o Aumento do endividamento governamental. Sugira uma solução sustentável para reduzi-lo. "
 E4_2 = "Analise a empresa na classificação Econômica, identificando a dívida pública, e a Redução da receita fiscal. Sugira uma solução sustentável para reduzi-lo. "
 E4_3 = "Analise a empresa na classificação Econômica, identificando a dívida pública, e o Aumento dos juros da dívida. Sugira uma solução sustentável para reduzi-lo. "
 
+E5 = "Esta mensagem é uma mensagem automática: Analise o problema da empresa na classificação Econômica, identificando a instabilidade econômica. Sugira uma solução sustentável para reduzi-lo seguindo o próximo prompt:"
 E5_1 = "Analise a empresa na classificação Econômica, identificando a instabilidade econômica, e o Flutuações significativas na economia. Sugira uma solução sustentável para reduzi-lo. "
 E5_2 = "Analise a empresa na classificação Econômica, identificando a instabilidade econômica, e os Impactos negativos no crescimento econômico. Sugira uma solução sustentável para reduzi-lo. "
 E5_3 = "Analise a empresa na classificação Econômica, identificando a instabilidade econômica, e o Efeito sobre o emprego. Sugira uma solução sustentável para reduzi-lo. "
