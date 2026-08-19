@@ -80,6 +80,30 @@ def criar_login(nome, email, senha):
     cursor.close()
     conn.close()
 
+#encontrar id usuario
+def encontrar_id_usuario(email):
+    conn = criar_conexao()
+    if not conn:
+        return None
+
+    cursor = conn.cursor()
+    sql = "SELECT id_usuario FROM usuarios WHERE email = %s"
+    valores = (email,)
+    if valores not in sql:
+        print("Email não encontrado no banco de dados.")
+        return None
+    cursor.execute(sql, valores)
+    resultado = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    if resultado:
+        return resultado[0]
+    else:
+        return None
+
+
 # lê os usuários e RETORNA os valores
 def ler_usuarios():
     conn = criar_conexao()
