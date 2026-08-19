@@ -12,38 +12,52 @@ def erro():
 def denovo():
     while True:
         print("=================")
-        continuar = input("Deseja fazer mais alguma coisa em nosso sistema? \n1 - Sim \n2 - Não \nDigite aqui: ")
 
-        if continuar.strip() == "":
+        continuar = input(
+            "Deseja fazer mais alguma coisa em nosso sistema?\n"
+            "1 - Sim\n"
+            "2 - Não\n"
+            "Digite aqui: "
+        ).strip()
+
+        if continuar == "":
             print("Campo vazio!")
             continue
 
-        elif continuar == "1":
+        if continuar == "1":
             print("=================\n")
             return
 
-        elif continuar == "2":
-            print("Você saiu, obrigado por ultilizar nosso sistema!")
+        if continuar == "2":
+            print("Você saiu, obrigado por utilizar nosso sistema!")
             exit()
-        else: 
-            print("Valor inválido por favor responda com 1 ou 2.")
-        print("=================")
+
+        print("Valor inválido. Por favor, responda com 1 ou 2.")
 
 #def validar nome
 def validar_nome(nome):
-    nome = " ".join(nome.split())
+    # Remove espaços extras
+    nome = " ".join(nome.strip().split())
 
     if nome == "":
-        print("Campo vazio!") 
+        print("Campo vazio!")
         return False
-    if nome.replace(" ", "").isalpha():
-        return nome
 
-    return False
+    # Remove os espaços para verificar somente as letras
+    nome_sem_espacos = nome.replace(" ", "")
+
+    if not nome_sem_espacos.isalpha():
+        print("O nome deve conter apenas letras.")
+        return False
+
+    return nome
 
 #def validar email
-def validar_email(Email):
-    if Email.strip() == "":
+def validar_email(email):
+
+    email = email.strip().lower()
+
+    if email == "":
         erro()
         print("Campo vazio!")
         return False
@@ -53,63 +67,99 @@ def validar_email(Email):
     if not any(a in Email for a in arroba):
         print("Coloque o email corretamente")
         erro()
+        print("Email inválido!")
         return False
 
-    return True
+    usuario, dominio = email.split("@")
+
+    # Verifica se existe algo antes do @
+    if usuario == "":
+        erro()
+        print("Email inválido!")
+        return False
+
+    # Não permite espaços
+    if " " in email:
+        erro()
+        print("O email não pode conter espaços!")
+        return False
+
+    # Domínios permitidos
+    dominios_permitidos = [
+        "gmail.com",
+        "hotmail.com",
+        "outlook.com",
+        "yahoo.com",
+        "prof.sc.senac.br"
+    ]
+
+    # Verifica o domínio
+    if dominio not in dominios_permitidos:
+        erro()
+        print("Domínio de email não permitido!")
+        print("Use Gmail, Hotmail, Outlook, Yahoo ou Senac.")
+        return False
+
+    return email
+
 
 # valida a senha na hora do create 
 def validar_senha():
+
     while True:
 
         senha = input("Crie a sua senha: ").strip()
 
-        if senha.strip() == "":
-            print("Campo vazio!")  
-            continue 
+        if senha == "":
+            print("Campo vazio!")
+            continue
 
+        # Limite da senha
+        if len(senha) < 6 or len(senha) > 10:
+            print("A senha deve ter entre 6 e 10 caracteres.")
+            continue
 
+        # Precisa ter pelo menos uma letra
         letra = any(caracter.isalpha() for caracter in senha)
-        num = any(caracter.isdigit() for caracter in senha)
-        carac = any(not caracter.isalnum() for caracter in senha)
- 
-        if len(senha) > 10 or len(senha) < 1:
-            print("Coloque entre 1 e 10 valores")
-            continue
-           
-        if letra and num and carac:
-            print("Senha valida")
+
+        # Precisa ter pelo menos um número
+        numero = any(caracter.isdigit() for caracter in senha)
+
+        # Precisa ter pelo menos um caractere especial
+        especial = any(
+            not caracter.isalnum()
+            for caracter in senha
+        )
+
+        if not letra:
+            print("A senha precisa ter pelo menos uma letra.")
+
+        if not numero:
+            print("A senha precisa ter pelo menos um número.")
+
+        if not especial:
+            print(
+                "A senha precisa ter pelo menos "
+                "um caractere especial."
+            )
+
+        if letra and numero and especial:
+            print("Senha válida!")
             return senha
-            
-            
-        else:
-            print ("=================")
-            if not letra:
-                print ("Precisa de letra")
-                
 
-            if not num:
-                print ("Precisa de numero")
-                
-                
-            if not carac:
-                print ("Precisa de caracter especial")
-                
-                
+        print("=================")
+        print("Tente novamente.")
+        print("=================")
 
-            print ("Tente de novo")
-            print ("============")
-            continue
 
 # valida o id do docente que o usuario colocou 
 def validar_id():
-    
-    while True:
-        conn = criar_conexao()
-        cursor = conn.cursor()
-        
-        id_usuario = input("Digite seu ID: ").replace(" ", "")
 
-        if id_usuario.strip() == "":
+    while True:
+
+        id_usuario = input("Digite seu ID: ").strip()
+
+        if id_usuario == "":
             print("Campo vazio!")
             continue
 
@@ -117,20 +167,40 @@ def validar_id():
             print("Apenas números!")
             continue
 
-        sql = "SELECT id_usuario FROM usuarios WHERE id_usuario = %s"
+        conn = criar_conexao()
 
-        cursor.execute(sql, (id_usuario,))
+        if conn is None:
+            print("Erro ao conectar com o banco de dados!")
+            return False
 
-        resultado = cursor.fetchone()
+        cursor = conn.cursor()
 
-        if resultado is None:
-            print("ID inválido!")
-            continue
-        
-        cursor.close()
-        conn.close()
+        try:
 
-        return id_usuario
+            sql = """
+                SELECT id_usuario
+                FROM usuarios
+                WHERE id_usuario = %s
+            """
+
+            cursor.execute(sql, (id_usuario,))
+            resultado = cursor.fetchone()
+
+            if resultado is None:
+                print("ID inválido!")
+                continue
+
+            return id_usuario
+
+        except Error as e:
+
+            print(f"Erro ao consultar o ID: {e}")
+            return False
+
+        finally:
+
+            cursor.close()
+            conn.close()
 
 
 
