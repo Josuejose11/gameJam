@@ -148,20 +148,20 @@ def ler_usuarios():
 
     if not resultado:
         print("======================")
-        print("Nenhum aluno cadastrado")
+        print("Nenhuma empresa cadastrada")
         print("======================")
         cursor.close()
         conn.close()
         return False
     else:
-        print("======================")
-        print("LISTA DE ALUNOS")
-        print("======================")
+        print("==============================")
+        print("LISTA DE EMPRESAS CADASTRADAS")
+        print("==============================")
 
-        for aluno in resultado:
+        for empresa in resultado:
             print(
-                f"Id: {aluno[0]} | "
-                f"Nome: {aluno[1]} | "
+                f"Id: {empresa[0]} | "
+                f"Nome: {empresa[1]} | "
             )
 
     cursor.close()
@@ -191,11 +191,13 @@ def informacoes():
             print(f"\n{Bioeconomico}")
         elif escolha == "0":
             print("Saindo...")
-            break
+            exit()
         else:
             print("Opção inválida. Tente novamente.")
 
-        denovo()
+        break
+
+    denovo()
 
 # def de solucao de problemas
 def solucao_problemas():
@@ -203,7 +205,8 @@ def solucao_problemas():
         print()
         print("Para entendermos sobre o que se trata o problema precisamos saber em qual categoria ele se classifica")
         print(" | 0 - Sair \n | 1 -  Ambiental \n | 2 -  Econômico \n | 3 - Bioeconomia (Ambiental e econômico)")
-        escolha = input("| Escreva aqui: ").strip()
+        escolha = input(" | Escreva aqui: ").strip()
+        print ("=================")
 
         match escolha:
             case "0":
@@ -337,8 +340,8 @@ def economico():
 
         match escolha:
             case "1":
-                print("Sobre crise economica podemos dizer que existem algumas classificações, escolha qual se encaixa melhor com o seu problema.")
-                print("| 1 - Aumento dos custos de produção \n | 2 - Queda na produção \n | 3 - Perda de matéria-prima durante a produção\n | 4 - Individamento Empresarial \n | 5 - Nenhuma das opções anteriores")
+                print("----------------------------------")
+                print(" | 1 - Aumento dos custos de produção \n | 2 - Queda na produção \n | 3 - Perda de matéria-prima durante a produção\n | 4 - Individamento Empresarial \n | 5 - Nenhuma das opções anteriores")
                 escolha = input("Escreva aqui: ")
 
                 match escolha:

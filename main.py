@@ -82,7 +82,7 @@ while True:
 
         case _:
             erro()
-            print("Escolha uma das opções! :(")
+            print("Escolha uma das opções!")
             continue
 
         

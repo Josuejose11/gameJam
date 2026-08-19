@@ -77,8 +77,12 @@ def salvar_conversa(id_usuario, mensagem_usuario, resposta_ia):
 
 #  def de inicio da conversa c a ia
 def Ia(msg):
-    email = input("Antes de enviar a mensagem, precisamos do seu email: ")
-    id_usuario = encontrar_id_usuario(email)
+    while True:
+        email = input("Antes de enviar a mensagem, precisamos do seu email: ")
+        id_usuario = encontrar_id_usuario(email)
+        if id_usuario:
+            break
+        print("Email não encontrado. Por favor, tente novamente.")
 
     global pensando
 

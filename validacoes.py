@@ -48,7 +48,7 @@ def validar_email(Email):
         print("Campo vazio!")
         return False
 
-    arroba = ["@gmail.com", "@hotmail.com", "@outlook.com", "@yahoo.com", "@prof.sc.senac.br" ]
+    arroba = ["@gmail.com", "@hotmail.com", "@outlook.com", "@yahoo.com" ]
 
     if not any(a in Email for a in arroba):
         print("Coloque o email corretamente")

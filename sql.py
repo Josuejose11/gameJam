@@ -27,25 +27,27 @@ def sql():
     
 
     # Criação da tabela de usuários
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS usuarios (
-            id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-            nome VARCHAR(255) NOT NULL,
-            senha VARCHAR(255) NOT NULL
-        )
+    cursor.execute("""               
+        CREATE TABLE IF NOT EXISTS Usuarios (
+            id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+            nome VARCHAR(100),
+            email VARCHAR(100),
+            senha VARCHAR(100)
+        );
     """)
 
     # Criação da tabela de conversas
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS conversas (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            id_usuario INT NOT NULL,
-            mensagem_usuario TEXT NOT NULL,
-            resposta_ia TEXT NOT NULL,
-            FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
-        )
+        CREATE TABLE IF NOT EXISTS HistoricoConversas (
+            id_usuario_fk INT,
+            horario DATETIME DEFAULT CURRENT_TIMESTAMP,
+            mensagem_usuario TEXT,
+            resposta_ia TEXT,
+            FOREIGN KEY (id_usuario_fk) REFERENCES Usuarios(id_usuario)
+        );
     """)
 
     conn.commit()
     cursor.close()
     conn.close()
+    
