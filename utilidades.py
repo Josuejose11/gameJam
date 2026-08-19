@@ -1,6 +1,5 @@
 import mysql.connector
 from mysql.connector import Error
-from validacoes import *
 from prompts import *
 
 

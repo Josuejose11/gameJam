@@ -1,7 +1,20 @@
 from utilidades import *
 def sql():
-    conn = criar_conexao()
+    try:
+        conn = mysql.connector.connect(
+        host='127.0.0.1',
+        user='root',
+        password='Senac2026',
+        )
+        
+    except Error as e:
+        print(f"Erro ao conectar: {e}")
 
+    
+
+
+
+    
     if conn is None:
         print("Erro ao conectar com o banco!")
         return False
@@ -16,7 +29,7 @@ def sql():
     # Criação da tabela de usuários
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS usuarios (
-            id INT AUTO_INCREMENT PRIMARY KEY,
+            id_usuario INT AUTO_INCREMENT PRIMARY KEY,
             nome VARCHAR(255) NOT NULL,
             senha VARCHAR(255) NOT NULL
         )

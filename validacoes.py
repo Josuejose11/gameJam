@@ -1,7 +1,6 @@
-import utilidades
-from utilidades import *
 import mysql.connector
 from mysql.connector import Error
+from utilidades import criar_conexao
 
 #bloco de prinst para erro
 def erro():
@@ -36,9 +35,6 @@ def validar_nome(nome):
 
     if nome == "":
         print("Campo vazio!") 
-        return False
-    if not " " in nome:
-        print("Digite seu nome completo")
         return False
     if nome.replace(" ", "").isalpha():
         return nome
@@ -106,6 +102,7 @@ def validar_senha():
 
 # valida o id do docente que o usuario colocou 
 def validar_id():
+    
     while True:
         conn = criar_conexao()
         cursor = conn.cursor()
