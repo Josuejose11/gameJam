@@ -143,29 +143,25 @@ def ler_usuarios():
     
 # def de informacoes
 def informacoes():
-    sust = "Sustentabilidade é a capacidade de usar os recursos da Terra com inteligência.\n O objetivo é atender às necessidades do presente sem acabar com o futuro. O conceito busca um equilíbrio entre cuidar do planeta, fazer a economia crescer e ajudar a sociedade."
-    como = "Como podemos contribuir para a sustentabilidade? Podemos economizar energia, reciclar, reduzir o consumo de água, plantar árvores e apoiar empresas que se preocupam com o meio ambiente. Cada pequena ação conta!"
-    beneficios = "Os benefícios da sustentabilidade são muitos. Ela ajuda a proteger o meio ambiente, melhora a qualidade de vida das pessoas, promove a economia verde e garante que as futuras gerações possam viver em um planeta saudável."
-    economia = "Além de todos os benefícios ambientais, a sustentabilidade também pode trazer vantagens econômicas. Empresas que adotam práticas sustentáveis podem reduzir custos, atrair clientes conscientes e se destacar no mercado."
+    Economico = "Sustentabilidade econômica é a capacidade de uma economia de crescer e se desenvolver de forma equilibrada, garantindo a geração de riqueza, emprego e renda para a sociedade, sem comprometer os recursos naturais e o bem-estar das gerações futuras."
+    Social = "Sustentabilidade social é a capacidade de uma sociedade de manter e melhorar o bem-estar de seus membros, garantindo igualdade, justiça e qualidade de vida para todos." 
+    Bioeconomico = "Podemos definir bioeconomia como um modelo econômico fundamentado no uso sustentável de recursos biológicos renováveis "
 
     while True:
         print("\nEscolha uma opção:")
         print("0 - Sair")
-        print("1 - ...")
-        print("2 - ...")
-        print("3 - ...")
-        print("4 - ...")
+        print("1 - Economico")
+        print("2 - Social")
+        print("3 - Bioeconomico")
         
         escolha = input("Digite o número da opção desejada: ")
 
         if escolha == "1":
-            print(f"\n{sust}")
+            print(f"\n{Economico}")
         elif escolha == "2":
-            print(f"\n{como}")
+            print(f"\n{Social}")
         elif escolha == "3":
-            print(f"\n{beneficios}")
-        elif escolha == "4":
-            print(f"\n{economia}")
+            print(f"\n{Bioeconomico}")
         elif escolha == "0":
             print("Saindo...")
             break
@@ -452,4 +448,5 @@ def bioeconomia():
             case "5":
                 nenhuma_das_opcoes() 
     
-            
+
+informacoes()
