@@ -1,6 +1,6 @@
 from concurrent.futures import thread
 from urllib import response
-
+from utilidades import *
 from google import genai
 from google.genai import types
 import time
@@ -61,6 +61,32 @@ def gemini(texto):
 
     print ("\n\nChat: " + resposta)
 
+
+def salvar_conversa(id_usuario, mensagem_usuario, resposta_ia):
+    conn = criar_conexao()
+
+    if conn is None:
+        print("Erro ao conectar com o banco!")
+        return False
+
+    cursor = conn.cursor()
+
+    sql = """
+        INSERT INTO HistoricoConversas
+        (id_usuario_fk, mensagem_usuario, resposta_ia)
+        VALUES (%s, %s, %s)
+    """
+
+    valores = (id_usuario, mensagem_usuario, resposta_ia)
+
+    cursor.execute(sql, valores)
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+    return True
+
 #  def de inicio da conversa c a ia
 def Ia(msg):
     global pensando
@@ -75,6 +101,9 @@ def Ia(msg):
     pensando = False
     thread.join()
     print ("\n\nChat: " + resposta)
+    salvar_conversa(id_usuario, msg, resposta)
+
+    
 
     
 
