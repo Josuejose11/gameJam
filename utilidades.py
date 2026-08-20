@@ -560,7 +560,7 @@ def gemini(texto):
 
     
     resposta  = "Me dê apenas uma resposta simples e sustentavel, deixe bem claro o lado da sustentabilidade para: " + texto
-    client = genai.Client(api_key="SUA_CHAVE_DE_API")  # Substitua pelo seu token de API do Gemini 
+    client = genai.Client(api_key="sua_chave_api")  # Substitua pelo seu token de API do Gemini 
 
     config = types.GenerateContentConfig(
         automatic_function_calling=types.AutomaticFunctionCallingConfig(
@@ -592,9 +592,7 @@ def gemini(texto):
 
 
 
-    
-
-
+# Salva conversa entre ia e o usuario no banco de dados
 def salvar_conversa(id_usuario, mensagem_usuario, resposta_ia):
     conn = criar_conexao()
 
@@ -603,14 +601,15 @@ def salvar_conversa(id_usuario, mensagem_usuario, resposta_ia):
         return False
 
     cursor = conn.cursor()
+    horario = time.strftime('%Y-%m-%d %H:%M:%S')
 
     sql = """
         INSERT INTO HistoricoConversas
-        (id_usuario_fk, mensagem_usuario, resposta_ia)
-        VALUES (%s, %s, %s)
+        (id_usuario_fk, mensagem_usuario, resposta_ia, horario)
+        VALUES (%s, %s, %s, %s)
     """
 
-    valores = (id_usuario, mensagem_usuario, resposta_ia)
+    valores = (id_usuario, mensagem_usuario, resposta_ia, horario)
 
     cursor.execute(sql, valores)
     conn.commit()
@@ -672,7 +671,83 @@ def Ia(msg):
                 return
 
                 
+def acessar_historico():
+    while True:
+        email = input("Para acessar o histórico, precisamos do seu email: ")
+        id_usuario = encontrar_id_usuario(email)
+
+        if id_usuario is None:
+            print("Não foi possível encontrar esse usuário.")
+            continue
+        break
+
+    conn = criar_conexao()
+
+    if conn is None:
+        print("Erro ao conectar com o banco!")
+        return False
+
+    cursor = conn.cursor()
+
+    sql = """
+        SELECT horario, mensagem_usuario, resposta_ia
+        FROM HistoricoConversas
+        WHERE id_usuario_fk = %s
+        ORDER BY horario DESC
+    """
+
+    cursor.execute(sql, (id_usuario,))
+    resultado = cursor.fetchall()
+
+    if not resultado:
+        print("======================")
+        print("Nenhuma conversa encontrada")
+        print("======================")
+    else:
+        print("==============================")
+        print("HISTÓRICO DE CONVERSAS")
+        print("==============================")
+
+        for conversa in resultado:
+            horario, mensagem_usuario, resposta_ia = conversa
+            print(f"Horário: {horario}")
+            print(f"Mensagem do usuário: {mensagem_usuario}")
+            print(f"Resposta da IA: {resposta_ia}")
+            print("------------------------------")
+
+    cursor.close()
+    conn.close()
 
     
-    
+def exibir_historico_conversas():
+    conn = criar_conexao()
+
+    id_usuario = encontrar_id_usuario(input("Digite seu email para acessar o histórico de conversas: "))
+
+    if conn is None:
+        print("Erro ao conectar com o banco!")
+        return
+
+    cursor = conn.cursor()
+
+    sql = """
+        SELECT mensagem_usuario, resposta_ia
+        FROM HistoricoConversas
+        WHERE id_usuario_fk = %s
+    """
+
+    cursor.execute(sql, (id_usuario,))
+    resultado = cursor.fetchall()
+
+    if not resultado:
+        print("Nenhuma conversa encontrada para este usuário.")
+    else:
+        print("Histórico de Conversas:")
+        for mensagem_usuario, resposta_ia in resultado:
+            print(f"Usuário: {mensagem_usuario}")
+            print(f"IA: {resposta_ia}")
+            print("--------------------")
+
+    cursor.close()
+    conn.close()
 

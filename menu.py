@@ -20,10 +20,9 @@ def menu():
                 solucao_problemas()
 
             case "3":
-                if not ler_usuarios():
-                    continue
-                acessar_historico()
+                exibir_historico_conversas()
 
             case _:
                 erro()
                 continue
+

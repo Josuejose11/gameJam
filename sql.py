@@ -10,11 +10,7 @@ def sql():
     except Error as e:
         print(f"Erro ao conectar: {e}")
 
-    
 
-
-
-    
     if conn is None:
         print("Erro ao conectar com o banco!")
         return False
