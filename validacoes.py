@@ -115,8 +115,8 @@ def validar_senha():
             continue
 
         # Limite da senha
-        if len(senha) < 6 or len(senha) > 10:
-            print("A senha deve ter entre 6 e 10 caracteres.")
+        if len(senha) < 1 or len(senha) > 10:
+            print("A senha deve ter entre 1 e 10 caracteres.")
             continue
 
         # Precisa ter pelo menos uma letra
