@@ -94,7 +94,7 @@ O projeto se conecta a um banco MySQL local e à API do Gemini. Atualmente as cr
 
 1. **Banco de dados** — edite os parâmetros de conexão (`host`, `user`, `password`) em `sql.py` e `utilidades.py` para os do seu ambiente MySQL. O banco `Hakaton` e as tabelas (`Usuarios`, `HistoricoConversas`) são criados automaticamente ao rodar `main.py`, ou você pode executar `hakaton.sql` manualmente.
 
-2. **Chave da API do Gemini** — substitua o valor de `api_key` na função `gemini()` (em `utilidades.py`) pela sua própria chave.
+2. **Chave da API do Gemini** — substitua o valor de `api_key` na função `gemini()` (em `utilidades.py`, linha 563) pela sua própria chave.
 
 > **Recomendação de segurança:** por enquanto o usuário/senha do banco e a chave de API ficam hardcoded no código-fonte. Para uso além de testes locais, mova esses valores para variáveis de ambiente (ex: com `python-dotenv`) e evite versioná-los no Git.
 
