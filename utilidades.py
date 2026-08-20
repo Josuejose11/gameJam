@@ -450,7 +450,7 @@ def economico():
 def bioeconomia():
     while True:
         print("Em quais dessas classificações o seu problema se encaixa?")
-        print (" | 1 - Desperdício de matéria-prima orgânica\n |  2 - Uso excessivo de recursos naturais\n | 3 - Alto custo de matérias-primas sustentáveis\n | 4 - Falta de tecnologia para reaproveitamento \n | 5 - Nenhuma das opções enteriores")
+        print (" | 1 - Desperdício de matéria-prima orgânica\n | 2 - Uso excessivo de recursos naturais\n | 3 - Alto custo de matérias-primas sustentáveis\n | 4 - Falta de tecnologia para reaproveitamento \n | 5 - Nenhuma das opções enteriores")
         escolha  = input ("Escreva aqui: ")
 
         match escolha:
@@ -740,9 +740,14 @@ def exibir_historico_conversas():
     resultado = cursor.fetchall()
 
     if not resultado:
+        print("----------------------------------------------")
+        print()
         print("Nenhuma conversa encontrada para este usuário.")
+        print()
+        print("----------------------------------------------")
     else:
         print("Histórico de Conversas:")
+        print()
         for mensagem_usuario, resposta_ia in resultado:
             print(f"Usuário: {mensagem_usuario}")
             print(f"IA: {resposta_ia}")
